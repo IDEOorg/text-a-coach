@@ -10,6 +10,8 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+   
+
     <style>
       body {
         background: #FFFFFF;
@@ -19,40 +21,59 @@
         margin-top: 60px;
       }
       .hero-section-bg{
-        overflow: hidden;
+        /*
         background: #f06;
         background: linear-gradient(45deg, #fff722, #ff26f9);
+        */
+        overflow: hidden;
         min-height: 100%;
         position: relative;
         z-index: 1;
+        background: url('hero-image.png') no-repeat;
+        background-size: cover;
+        background-position: right top;
+
         }
 
       .hero-section {
         min-height: 400px;
-        padding-right: 60px;
       }
 
       .hero-h1 {
+        font-family: 'montserratregular', 'Gotham', sans-serif;
         margin-top: 100px;
         font-size: 48px;
         margin-top: 40px;
+        color: #FFFFFF;
+        width: 100%;
       }
+      
       .hero-description {
+        font-family: 'montserratregular', 'Gotham', sans-serif;
         font-weight: 500;
         font-size: 22px;
         line-height: 28px;
+        color: #FFFFFF;
       }
+
       .hero-h3 {
+        font-family: 'montserratregular', 'Gotham', sans-serif;
         margin-top: 40px;
         font-size: 22px;
         line-height: 28px;
+        color: #FFFFFF;
       }
 
       .description {
         margin-bottom: 40px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 500;
       }
+
+      .col-md-12 text-center { 
+        font-family: 'montserratlight', 'Gotham', sans-serif !important;
+      }
+
       .feature-section {
         min-height: 120px;
         display: flex;
@@ -64,14 +85,67 @@
         min-height: 100px;
       }
       .feature-section img, .feature-section h5 {
+        font-family: 'montserratregular', 'Gotham', sans-serif !important;
+        color: #4A90E2;
         display: block;
         margin: 0 auto;
       }
 
       .footer {
+        font-family: 'montserratlight', 'Gotham', sans-serif;
         line-height: 14px;
         margin: 100px 0 50px;
       }
+
+      @media only screen and (max-width: 620px) {
+      .hero-h1 {
+      font-size: 32px;  
+      }
+      .hero-description {
+      font-size: 18px;
+      }
+
+    }
+
+@font-face {
+    font-family: 'montserratlight';
+    src: url('fonts/montserrat-light-webfont.eot');
+    src: url('fonts/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat-light-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-light-webfont.woff') format('woff'),
+         url('fonts/montserrat-light-webfont.ttf') format('truetype'),
+         url('fonts/montserrat-light-webfont.svg#montserratlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat-regular-webfont.eot');
+    src: url('fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-regular-webfont.woff') format('woff'),
+         url('fonts/montserrat-regular-webfont.ttf') format('truetype'),
+         url('fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'montserratsemi_bold';
+    src: url('fonts/montserrat-semibold-webfont.eot');
+    src: url('fonts/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-semibold-webfont.woff') format('woff'),
+         url('fonts/montserrat-semibold-webfont.ttf') format('truetype'),
+         url('fonts/montserrat-semibold-webfont.svg#montserratsemi_bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
     </style>
 
 
@@ -106,7 +180,7 @@
     <div class="hero-section hero-section-bg">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 col-sm-offset-1 col-md-6 col-lg-offset-2">
+          <div class="col-sm-8 col-md-4 col-md-offset-8">
             <h1 class="hero-h1">Text A Coach</h1>
             <div class="hero-description">Get the FREE financial information you need from our certified financial planners.</div>
             <h3 class="hero-h3">Just text this number to get started:<br/>
@@ -118,7 +192,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
-          <div class="description">We can provide help with questions about:</div>
+          <div class="description"><h4>We can provide help with questions about:</h4></div>
         <!-- <form>
           <div class="form-group">
             <label for="phoneNumber">Send a text message to (209) 662-6224 or enter your phone number here to begin a conversation.</label>
@@ -169,7 +243,7 @@
       </div>
     </div>
 
-    <div class="footer container">
+    <div class="footer">
       <div class="row">
         <div class="col-md-8 col-md-offset-2 text-center">
           <small>This service is brought to you by <a href="http://ideo.org" onclick="fbq('track', 'IdeoOrgLink');">IDEO.org</a> in collaboration with a large funding partner. Please note, we're still in beta. By texting this number, you're accepting our <a href="terms.html" onclick="fbq('track', 'ViewTerms');">terms</a>.</small>
