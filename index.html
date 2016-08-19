@@ -17,9 +17,15 @@
         background: #FFFFFF;
       }
 
-      .container {
-        margin-top: 60px;
+      a, a:link, a:visited {
+        color: black;
+        text-decoration: underline;
+        transition: color .2s ease;
       }
+      a:active, a:hover {
+        color: #4A90E2;
+      }
+
       .hero-section-bg{
         overflow: hidden;
         position: relative;
@@ -39,7 +45,7 @@
         font-family: 'montserratregular', 'Gotham', sans-serif;
         margin-top: 100px;
         font-size: 48px;
-        margin-top: 40px;
+        margin-top: 100px;
         color: #FFFFFF;
         width: 100%;
       }
@@ -62,8 +68,7 @@
 
       .description {
         margin-bottom: 40px;
-        font-size: 14px;
-        font-weight: 500;
+        margin-top: 60px;
       }
 
       .col-md-12 text-center {
@@ -85,6 +90,11 @@
         color: #4A90E2;
         display: block;
         margin: 0 auto;
+      }
+
+      .why-section {
+        font-size: 14px;
+        line-height: 24px;
       }
 
       .footer {
@@ -237,6 +247,19 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="description"><h4>Why are we doing this?</h4></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 why-section">
+        Text-a-coach is brought to you by the financial health tools team at <a href="http://ideo.org" onclick="fbq('track', 'IdeoOrgLink');">IDEO.org</a>, a group of
+creative problem-solvers that is tackling the world’s biggest challenges. As a 501(c)(3) nonprofit organization, our mission is to improve the lives of people in poor and vulnerable communities through design. We’ve created this tool as a part of one of our design programs, and our goal is to learn how people might benefit from a service like this. We are grateful if you’d be willing to try it out! If you have questions or thoughts, feel free to reach us at <a href="mailto:letstalk@ideo.org">letstalk@IDEO.org</a>.
+      </div>
+
     </div>
 
     <div class="footer">
