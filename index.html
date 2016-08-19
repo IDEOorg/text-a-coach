@@ -12,31 +12,142 @@
 
     <style>
       body {
-        background: #4A90E2;
+        background: #FFFFFF;
       }
 
+      .container {
+        margin-top: 60px;
+      }
+      .hero-section-bg{
+        overflow: hidden;
+        background: #f06;
+        background: linear-gradient(45deg, #fff722, #ff26f9);
+        min-height: 100%;
+        position: relative;
+        z-index: 1;
+        }
 
+      .hero-section {
+        min-height: 400px;
+        padding-right: 60px;
+      }
+
+      .hero-h1 {
+        margin-top: 100px;
+        font-size: 48px;
+        margin-top: 40px;
+      }
+      .hero-description {
+        font-size: 16px;
+        line-height: 22px;
+      }
+      .hero-h3 {
+        margin-top: 40px;
+        line-height: 30px;
+      }
+
+      .description {
+        margin-bottom: 40px;
+      }
+      h5 {
+        color: #4A90E2;
+      }
+      .feature-section {
+        min-height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .feature-section img {
+        min-height: 100px;
+      }
+      .feature-section img, .feature-section h5 {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .footer {
+        line-height: 14px;
+        margin: 100px 0 50px;
+      }
     </style>
 
     </head>
-  <body class="container">
+  <body>
 
-    <div class="row hero-section">
-      <div class="col-md-offset-4 col-md-4 text-center">
-        <h1>Text A Coach</h1>
-        <div class="description">Get the FREE financial information you need from our certified financial planners.</div>
-        <form>
+    <div class="hero-section hero-section-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-1 col-lg-offset-2">
+            <h1 class="hero-h1">Text A Coach</h1>
+            <div class="hero-description">Get the FREE financial information you need from our certified financial planners.</div>
+            <h3 class="hero-h3">Send a text message to <strong>(209)&nbsp;662-6224</strong> to get started.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="description">We can provide help with questions about:</div>
+        <!-- <form>
           <div class="form-group">
             <label for="phoneNumber">Send a text message to (209) 662-6224 or enter your phone number here to begin a conversation.</label>
             <input type="email" class="form-control" id="phoneNumber" placeholder="(555) 555-5555">
           </div>
           <button type="submit" class="btn btn-default">Send a message</button>
-        </form>
+        </form> -->
+      </div>
+      <div class="row">
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-2 text-center">
+          <div class="feature-content  text-center text-center">
+            <img src="credit.svg" alt="credit" width="102" height="62">
+            <h5>Credit</h5>
+          </div>
+        </div>
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
+          <div class="feature-content  text-center">
+            <img src="loans.svg" alt="loans" width="80" height="71">
+            <h5>Loans</h5>
+          </div>
+        </div>
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
+          <div class="feature-content  text-center">
+            <img src="biz.svg" alt="biz" width="66" height="54">
+            <h5>Starting a business</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top: 60px">
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-2 text-center">
+          <div class="feature-content  text-center">
+            <img src="savings.svg" alt="savings" width="109" height="70">
+            <h5>Savings</h5>
+          </div>
+        </div>
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
+          <div class="feature-content  text-center">
+            <img src="debt.svg" alt="debt" width="77" height="66">
+            <h5>Debt</h5>
+          </div>
+        </div>
+        <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
+          <div class="feature-content  text-center">
+            <img src="taxes.svg" alt="taxes" width="87" height="79">
+            <h5>Taxes</h5>
+          </div>
+        </div>
       </div>
     </div>
 
-
-    <small>This service is brought to you by <a href="http://ideo.org">IDEO.org</a> in collaboration with a large funding partner. Please note, we're <a href="terms.html">still in beta</a>.</small>
+    <div class="footer container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center">
+          <small>This service is brought to you by <a href="http://ideo.org">IDEO.org</a> in collaboration with a large funding partner. Please note, we're still in beta. By texting this number, you're accepting our <a href="terms.html">terms</a>.</small>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
 

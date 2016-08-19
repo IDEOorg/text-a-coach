@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="68px" height="56px" viewBox="0 0 68 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Biz</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="Desktop-HD" transform="translate(-1006.000000, -1032.000000)" stroke="#4A90E2" stroke-width="3">
+            <g id="Biz" transform="translate(1007.000000, 1033.000000)">
+                <path d="M0.7415,8.9111 C0.7415,14.8541 5.5595,19.6721 11.5025,19.6721 C17.4465,19.6721 22.2645,14.8541 22.2645,8.9111 L0.7415,8.9111 L0.7415,8.9111 Z" id="Stroke-1"></path>
+                <path d="M22.2644,8.9111 C22.2644,14.8541 27.0824,19.6721 33.0254,19.6721 C38.9694,19.6721 43.7874,14.8541 43.7874,8.9111" id="Stroke-3"></path>
+                <path d="M43.7874,8.9111 C43.7874,14.8541 48.6054,19.6721 54.5484,19.6721 C60.4924,19.6721 65.3104,14.8541 65.3104,8.9111" id="Stroke-5"></path>
+                <polygon id="Stroke-7" points="61.8556 0.5 32.9986 0.5 4.1416 0.5 0.7416 8.911 32.9986 8.911 65.2566 8.911"></polygon>
+                <polyline id="Stroke-9" points="58.838 18.7798 58.838 53.3208 8.452 53.3208 8.452 19.6728"></polyline>
+                <polygon id="Stroke-11" points="29.642 53.3212 37.647 53.3212 37.647 33.9672 29.642 33.9672"></polygon>
+                <path d="M22.2644,8.9111 L24.9934,0.5001" id="Stroke-13"></path>
+                <path d="M43.7874,8.9111 L41.4554,0.5001" id="Stroke-14"></path>
+            </g>
+        </g>
+    </g>
+</svg>
