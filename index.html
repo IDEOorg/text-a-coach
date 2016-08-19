@@ -10,12 +10,10 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-
-
     <style>
       body {
         background: #FFFFFF;
-        font-family: 'montserratlight', 'Gotham', sans-serif;
+        font-family: 'montserratlight', Helvetica, sans-serif;
       }
 
       a, a:link, a:visited {
@@ -34,8 +32,7 @@
         background: url('hero-image.png') no-repeat;
         background-size: cover;
         background-position: right top;
-
-        }
+      }
 
       .hero-section {
         min-height: 400px;
@@ -43,7 +40,7 @@
       }
 
       .hero-h1 {
-        font-family: 'montserratregular', 'Gotham', sans-serif;
+        font-family: 'montserratregular', Helvetica, sans-serif;
         margin-top: 100px;
         font-size: 48px;
         margin-top: 100px;
@@ -52,7 +49,7 @@
       }
 
       .hero-description {
-        font-family: 'montserratlight', 'Gotham', sans-serif;
+        font-family: 'montserratlight', Helvetica, sans-serif;
         font-weight: 500;
         font-size: 22px;
         line-height: 28px;
@@ -60,7 +57,7 @@
       }
 
       .hero-h3 {
-        font-family: 'montserratlight', 'Gotham', sans-serif;
+        font-family: 'montserratlight', Helvetica, sans-serif;
         margin-top: 40px;
         font-size: 22px;
         line-height: 28px;
@@ -68,7 +65,7 @@
       }
 
       h4 {
-        font-family: 'montserratregular', 'Gotham', sans-serif !important;
+        font-family: 'montserratregular', Helvetica, sans-serif !important;
       }
 
       .description {
@@ -77,7 +74,7 @@
       }
 
       .col-md-12 text-center {
-        font-family: 'montserratlight', 'Gotham', sans-serif !important;
+        font-family: 'montserratlight', Helvetica, sans-serif !important;
       }
 
       .feature-section {
@@ -91,7 +88,7 @@
         min-height: 100px;
       }
       .feature-section img, .feature-section h5 {
-        font-family: 'montserratregular', 'Gotham', sans-serif !important;
+        font-family: 'montserratregular', Helvetica, sans-serif !important;
         color: #4A90E2;
         display: block;
         margin: 0 auto;
@@ -103,59 +100,55 @@
       }
 
       .footer {
-        font-family: 'montserratlight', 'Gotham', sans-serif;
+        font-family: 'montserratlight', Helvetica, sans-serif;
         line-height: 14px;
         margin: 100px 0 50px;
       }
 
       @media only screen and (max-width: 620px) {
-      .hero-h1 {
-      font-size: 32px;
-      }
-      .hero-description {
-      font-size: 18px;
+        .hero-h1 {
+          font-size: 32px;
+        }
+        .hero-description {
+          font-size: 18px;
+        }
       }
 
+    @font-face {
+      font-family: 'montserratlight';
+      src: url('fonts/montserrat-light-webfont.eot');
+      src: url('fonts/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/montserrat-light-webfont.woff2') format('woff2'),
+           url('fonts/montserrat-light-webfont.woff') format('woff'),
+           url('fonts/montserrat-light-webfont.ttf') format('truetype'),
+           url('fonts/montserrat-light-webfont.svg#montserratlight') format('svg');
+      font-weight: normal;
+      font-style: normal;
     }
 
-@font-face {
-    font-family: 'montserratlight';
-    src: url('fonts/montserrat-light-webfont.eot');
-    src: url('fonts/montserrat-light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/montserrat-light-webfont.woff2') format('woff2'),
-         url('fonts/montserrat-light-webfont.woff') format('woff'),
-         url('fonts/montserrat-light-webfont.ttf') format('truetype'),
-         url('fonts/montserrat-light-webfont.svg#montserratlight') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    @font-face {
+      font-family: 'montserratregular';
+      src: url('fonts/montserrat-regular-webfont.eot');
+      src: url('fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
+           url('fonts/montserrat-regular-webfont.woff') format('woff'),
+           url('fonts/montserrat-regular-webfont.ttf') format('truetype'),
+           url('fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-}
-
-@font-face {
-    font-family: 'montserratregular';
-    src: url('fonts/montserrat-regular-webfont.eot');
-    src: url('fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
-         url('fonts/montserrat-regular-webfont.woff') format('woff'),
-         url('fonts/montserrat-regular-webfont.ttf') format('truetype'),
-         url('fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'montserratsemi_bold';
-    src: url('fonts/montserrat-semibold-webfont.eot');
-    src: url('fonts/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
-         url('fonts/montserrat-semibold-webfont.woff') format('woff'),
-         url('fonts/montserrat-semibold-webfont.ttf') format('truetype'),
-         url('fonts/montserrat-semibold-webfont.svg#montserratsemi_bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
+    @font-face {
+      font-family: 'montserratsemi_bold';
+      src: url('fonts/montserrat-semibold-webfont.eot');
+      src: url('fonts/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+           url('fonts/montserrat-semibold-webfont.woff2') format('woff2'),
+           url('fonts/montserrat-semibold-webfont.woff') format('woff'),
+           url('fonts/montserrat-semibold-webfont.ttf') format('truetype'),
+           url('fonts/montserrat-semibold-webfont.svg#montserratsemi_bold') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
 
     </style>
 
@@ -185,7 +178,7 @@
     ga('create', 'UA-82803326-1', 'auto');
     ga('send', 'pageview');</script>
     <!-- End Google Analytics Code -->
-    </head>
+  </head>
   <body>
 
     <div class="hero-section hero-section-bg">
