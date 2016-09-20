@@ -15,73 +15,111 @@
         background: #FFFFFF;
         font-family: 'montserratlight', Helvetica, sans-serif;
       }
-
+	  
       a, a:link, a:visited {
-        color: black;
+        color: white;
         text-decoration: underline;
         transition: color .2s ease;
       }
-      a:active, a:hover {
-        color: #4A90E2;
-      }
 
-      .hero-section-bg{
+      .hero-section-bg {
         overflow: hidden;
         position: relative;
         z-index: 1;
         background: url('hero-image.png') no-repeat;
         background-size: cover;
-        background-position: right top;
+        background-position: left top;
       }
 
       .hero-section {
         min-height: 400px;
         padding-bottom: 60px;
+
+		color: white;
       }
 
       .hero-h1 {
         font-family: 'montserratregular', Helvetica, sans-serif;
         margin-top: 100px;
-        font-size: 48px;
+        font-size: 42px;
+		font-weight: bold;
         margin-top: 100px;
-        color: #FFFFFF;
-        width: 100%;
       }
 
       .hero-description {
         font-family: 'montserratlight', Helvetica, sans-serif;
         font-weight: 500;
-        font-size: 20px;
-        line-height: 28px;
-        color: #FFFFFF;
+        font-size: 14px;
+        line-height: 20px;
+		
+		max-width: 400px;
       }
+
 
       .hero-h3 {
         font-family: 'montserratlight', Helvetica, sans-serif;
         margin-top: 40px;
         font-size: 20px;
         line-height: 28px;
-        color: #FFFFFF;
       }
+
+	  .hero-phone-number {
+		  display: inline-block;
+		  padding: 10px 20px;
+		  margin: 10px 0;
+		  
+		  background-color: #4FCDE8;
+		  border-radius: 3px;
+
+		  font-weight: bold;
+		  font-size: 20px;
+	  }
+
+	  .hero-fine-print {
+		  max-width: 190px;
+		  
+		  
+		  font-size: 9px;
+		  text-align: center;
+		  color: #4FCDE8;
+	  }
+
+
+      @media only screen and (max-width: 620px) {
+        .hero-section {
+          text-align: center;
+        }
+		
+		.hero-description, .hero-fine-print {
+			margin: 0 auto;
+		}
+		
+	  }
+
+
+	  .hero-fine-print a, .hero-fine-print a:hover {
+		  color: #4FCDE8;
+	  }
+
 
       h4 {
         font-family: 'montserratregular', Helvetica, sans-serif !important;
       }
 
       .description {
-        margin-bottom: 40px;
-        margin-top: 60px;
+        margin-bottom: 20px;
       }
 
-      .col-md-12 text-center {
-        font-family: 'montserratlight', Helvetica, sans-serif !important;
-      }
+	  .example-topics-section {
+		  padding: 40px 0px;
+	  }
 
       .feature-section {
         min-height: 120px;
         display: flex;
         align-items: center;
         justify-content: center;
+	
       }
 
       .feature-section img {
@@ -95,15 +133,21 @@
       }
 
       .why-section {
+		margin-top: 30px 0;
+		padding: 45px 0;
+
         font-size: 14px;
-        line-height: 24px;
+        line-height: 18px;
+		text-align: center;
+		
+		background-color: #10282D;
+		color: white;
       }
 
-      .footer {
-        font-family: 'montserratlight', Helvetica, sans-serif;
-        line-height: 14px;
-        margin: 100px 0 50px;
-      }
+	  .why-section p {
+		  font-size: 12px;
+	  }
+
 
       @media only screen and (max-width: 620px) {
         .hero-h1 {
@@ -184,89 +228,88 @@
     <div class="hero-section hero-section-bg">
       <div class="container">
         <div class="row">
-          <div class="col-sm-8 col-md-4 col-md-offset-8">
+          <div class="col-xs-12 col-sm-6 col-sm-offset-6">
             <h1 class="hero-h1">Text A Coach</h1>
-            <div class="hero-description">Get the FREE financial information you need from our Certified Financial Planners™.</div>
-            <h3 class="hero-h3">Just text this number to get started:<br/>
-            <strong>(209)&nbsp;662-6224</strong></h3>
+            <div class="hero-description">Get the FREE financial information you need from our qualified advice network, including Certified Financial Planners™.
+				<br><br>
+			Just text this number to get started:
+			</div>
+			<div class="hero-phone-number">(209)&nbsp;662-6224</div>
+			<div class="hero-fine-print">This service is broght to you by <a href="http://ideo.org">IDEO.org</a>. Please note, we're still in beta. By texting this number you agree to our <a href="terms.html" onclick="fbq('track', 'ViewTerms');">terms.</a></div>
           </div>
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <div class="description"><h4>We can provide help with questions about:</h4></div>
-        <!-- <form>
-          <div class="form-group">
-            <label for="phoneNumber">Send a text message to (209) 662-6224 or enter your phone number here to begin a conversation.</label>
-            <input type="email" class="form-control" id="phoneNumber" placeholder="(555) 555-5555">
-          </div>
-          <button type="submit" class="btn btn-default">Send a message</button>
-        </form> -->
-      </div>
+    <div class="example-topics-section">
+		<div class="container">
+	      <div class="row">
+	        <div class="col-md-12 text-center">
+				<div class="description"><h4>We can provide help with questions about:</h4></div>
+			</div>
+		  </div>
+		  		  
       <div class="row">
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-2 text-center">
-          <div class="feature-content  text-center text-center">
-            <img src="credit.svg" alt="credit" width="102" height="62">
+          <div class="feature-content text-center">
+            <img src="credit.svg" alt="credit" width="90" height="56">
             <h5>Credit</h5>
           </div>
         </div>
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
           <div class="feature-content  text-center">
-            <img src="loans.svg" alt="loans" width="80" height="71">
+            <img src="loans.svg" alt="loans" width="72" height="64">
             <h5>Loans</h5>
           </div>
         </div>
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
           <div class="feature-content  text-center">
-            <img src="biz.svg" alt="biz" width="66" height="54">
+            <img src="biz.svg" alt="biz" width="68" height="60">
             <h5>Starting a business</h5>
           </div>
         </div>
       </div>
-      <div class="row" style="margin-top: 60px">
+      <div class="row">
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-2 text-center">
           <div class="feature-content  text-center">
-            <img src="savings.svg" alt="savings" width="109" height="70">
+            <img src="savings.svg" alt="savings" width="81" height="59">
             <h5>Savings</h5>
           </div>
         </div>
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
           <div class="feature-content  text-center">
-            <img src="debt.svg" alt="debt" width="77" height="66">
+            <img src="debt.svg" alt="debt" width="70" height="60">
             <h5>Debt</h5>
           </div>
         </div>
         <div class="feature-section col-xs-4 col-md-2 col-md-offset-1 text-center">
           <div class="feature-content  text-center">
-            <img src="taxes.svg" alt="taxes" width="56" height="91">
+            <img src="taxes.svg" alt="taxes" width="51" height="83">
             <h5>Taxes</h5>
           </div>
         </div>
       </div>
+
+		</div>
     </div>
 
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <div class="description"><h4>Why are we doing this?</h4></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2 why-section">
-        Text-a-coach is brought to you by the financial health tools team at <a href="http://ideo.org" onclick="fbq('track', 'IdeoOrgLink');">IDEO.org</a>, a group of
-creative problem-solvers that is tackling the world’s biggest challenges. As a 501(c)(3) nonprofit organization, our mission is to improve the lives of people in poor and vulnerable communities through design. We’ve created this tool as a part of one of our design programs, and our goal is to learn how people might benefit from a service like this. We are grateful if you’d be willing to try it out! If you have questions or thoughts, feel free to reach us at <a href="mailto:letstalk@ideo.org">letstalk@IDEO.org</a>.
-      </div>
+	<div class="why-section">
+		<div class="container">
+		    <div class="row">
+		      <div class="col-md-12 text-center">
+		        <div class="description"><h4>Why are we doing this?</h4></div>
+		      </div>
+		    </div>
+		    <div class="row">
+		      <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+				  <p>
+			        Text-a-coach is brought to you by the financial health tools team at <a href="http://ideo.org" onclick="fbq('track', 'IdeoOrgLink');">IDEO.org</a>, a group of
+			creative problem-solvers that is tackling the world’s biggest challenges. As a 501(c)(3) nonprofit organization, our mission is to improve the lives of people in poor and vulnerable communities through design. We’ve created this tool as a part of one of our design programs, and our goal is to learn how people might benefit from a service like this. We are grateful if you’d be willing to try it out! If you have questions or thoughts, feel free to reach us at <a href="mailto:letstalk@ideo.org">letstalk@IDEO.org</a>.
+				</p>
+		      </div>
+		    </div>
+		</div>
+	</div>
 
-    </div>
-
-    <div class="footer">
-      <div class="row">
-        <div class="col-md-8 col-md-offset-2 text-center">
-          <small>This service is brought to you by <a href="http://ideo.org" onclick="fbq('track', 'IdeoOrgLink');">IDEO.org</a>. Please note, we're still in beta. By texting this number, you're accepting our <a href="terms.html" onclick="fbq('track', 'ViewTerms');">terms</a>.</small>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
 
