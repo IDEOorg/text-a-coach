@@ -1,0 +1,32 @@
+.conversation {
+  padding-bottom: 1em;
+  border-bottom: 3px dotted rgba(255, 255, 255, 0.3);
+  margin-bottom: 2em;
+
+  &:last-child {
+    border-bottom: 0px solid transparent;
+  }
+
+  .message {
+    margin-bottom: 1em;
+    padding: 0.75em 1.5em 1.5em;
+
+    &.direction_in {
+      background-color: $teal-accent; // $light-background;
+      color: $dark-text;
+      border-radius: 3em;
+      margin-left: 2em;
+    }
+
+    &.direction_out {
+      background-color: $light-background;
+      color: $dark-text;
+      border-radius: 0.5em;
+      margin-right: 2em;
+    }
+
+    .person {
+      padding-bottom: 0.5em;
+    }
+  }
+}

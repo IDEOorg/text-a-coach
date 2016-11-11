@@ -1,0 +1,38 @@
+<div class="main-conversation container">
+  <div class="row align-center">
+    <div class="small-10 columns text-center">
+      <a class="hollow-button teal all-caps"
+        ng-click="vm.goBack()"
+      >
+        <i class="material-icons">chevron_left</i> Back To Conversations
+      </a>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-left">
+      <div class="conversation">
+        <div class="message"
+          ng-repeat="message in vm.conversation.messages"
+          ng-class="message.direction"
+        >
+          <div class="person text-center" ng-show="message.direction === 'direction_out'">
+            <small>{{vm.conversation.agent.name}}, {{vm.conversation.agent.job_title}}</small>
+          </div>
+          <div class="person text-center" ng-show="message.direction === 'direction_in'">
+            <small>{{vm.conversation.user.name}} in {{vm.conversation.user.city}}</small>
+          </div>
+          {{message.message}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-center">
+      <a class="hollow-button teal all-caps"
+        ng-click="vm.goBack()"
+      >
+        <i class="material-icons">chevron_left</i> Back To Conversations
+      </a>
+    </div>
+  </div>
+</div>
