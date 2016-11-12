@@ -14,7 +14,8 @@ export function config ($compileProvider, $logProvider, toastrConfig, DSProvider
   $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sms):/);
 
   angular.extend(DSProvider.defaults, {});
+  // TODO: Use config for API path
   angular.extend(DSHttpAdapterProvider.defaults, {
-    basePath: 'http://localhost:3333/api/v1/' // configApiBase
+    basePath: 'http://localhost:3333/api/v1/' // configApiBase // https://text-a-coach-backend.herokuapp.com
   });
 }

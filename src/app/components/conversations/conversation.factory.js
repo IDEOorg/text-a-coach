@@ -1,10 +1,33 @@
-export function ConversationFactory(DS) {
+export function ConversationFactory(DS, DSHttpAdapter) {
   'ngInject';
 
   return DS.defineResource({
     name: 'conversation',
     endpoint: 'conversations',
-    meta: {},
+    meta: {
+      search: function(query, platform, page) {
+        // if (searchPromise) { // && searchPromise.isPending() ?? TODO: https://github.com/kriskowal/q/wiki/API-Reference#promiseispending
+        //   searchPromise.reject('cancel');
+        // }
+        let params = {};
+        if (query) {
+          params.query = query;
+        }
+        params.platform_id = platform || 1;
+        params.page = page || 1;
+        // TODO: Use config for API path
+        let searchPromise = DSHttpAdapter
+          .GET('http://localhost:3333/api/v1/conversations/search', { params: params })
+          .then(function(response) {
+            if (response.data && response.data.length > 0) {
+              return DS.inject('conversation', response.data);
+            } else {
+              return [];
+            }
+          });
+        return searchPromise;
+      }
+    },
     computed: {},
     methods: {
       cloneFields: function() {
