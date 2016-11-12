@@ -27,6 +27,20 @@ $teal-accent: #50E3C2;
  */
 @import '../../bower_components/foundation-sites/scss/foundation';
 
+// MOTION UI VARIABLES
+$motion-ui-classes: (
+  chain: true,
+  prefix: 'ng-',
+  active: '-active',
+);
+
+$motion-ui-states: (
+  in: ('enter', 'hide-add'),
+  out: ('leave', 'hide-remove'),
+);
+
+@import '../../bower_components/motion-ui/src/motion-ui';
+
 // FOUNDAITON VARIABLES
 $global-lineheight: 1.2;
 $paragraph-lineheight: 1.2;
@@ -37,6 +51,8 @@ $button-background: #00006F;
 
 
 @include foundation-everything(true);
+@include motion-ui-transitions;
+@include motion-ui-animations;
 
 /**
  *  Do not remove the comments below. It's the markers used by wiredep to inject
@@ -100,6 +116,43 @@ h1, h2, h3 {
 
 }
 
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+
+.spinner {
+  display: block;
+  z-index: 0;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5em;
+  margin-left: -1.5em;
+  border: solid 3px;
+  border-radius: 1000px;
+  &.light {
+    border-color: $light-background transparent;
+  }
+  &.dark {
+    border-color: $dark-background transparent;
+  }
+  // @ include mui-animation(spin(in, 180deg));
+}
 
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
