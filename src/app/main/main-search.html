@@ -30,7 +30,7 @@
         ng-if="!vm.pending"
       >
         <div class="conversation"
-          ng-repeat="convo in vm.conversations"
+          ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
         >
           <div class="message direction_in">
             <div class="person text-center">
@@ -55,7 +55,11 @@
   </div>
   <div class="row align-center">
     <div class="small-10 columns text-center">
-      <a class="hollow-button teal all-caps">
+      <!-- TODO: Implement results paging with API -->
+      <a class="hollow-button teal all-caps"
+        ng-show="vm.limitTo !== false"
+        ng-click="vm.limitTo = false"
+      >
         Show More Conversations
       </a>
     </div>

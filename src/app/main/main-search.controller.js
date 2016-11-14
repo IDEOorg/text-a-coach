@@ -6,6 +6,7 @@ export class MainSearchController {
     this.$log = $log;
     this.Conversation = Conversation;
 
+    this.limitTo = 3;
     this.searchTextCache = '';
     this.searchPromise = null;
     this.debounceSearch = _.throttle(this.search, 500, {leading: true, trailing: true});
