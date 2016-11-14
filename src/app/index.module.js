@@ -7,6 +7,7 @@ import { ViewportService } from './components/viewport/viewport.service';
 import { ConversationFactory } from './components/conversations/conversation.factory';
 import { MessageFactory } from './components/conversations/message.factory';
 import { FooterDirective } from './components/footer/footer.directive';
+import { StickyFooterDirective } from './components/footer/sticky-footer.directive';
 
 import './main/main.module.js';
 import './components/config.js';
@@ -34,4 +35,5 @@ angular.module('coachApp', dependencies)
   .service('viewportService', ViewportService)
   .factory('Conversation', ConversationFactory)
   .factory('Message', MessageFactory)
-  .directive('footer', FooterDirective);
+  .directive('footer', FooterDirective)
+  .directive('stickyFooter', StickyFooterDirective);
