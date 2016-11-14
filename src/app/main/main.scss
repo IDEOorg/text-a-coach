@@ -5,6 +5,12 @@
   height: 100%;
   width: 100%;
 
+  @include breakpoint(medium down) {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
   .main-intro {
     position: absolute;
     overflow-x: hidden;
@@ -17,7 +23,7 @@
       overflow: visible;
       width: 100%;
       height: auto;
-      min-height: 100%;
+      min-height: 100vh;
     }
 
     .footer {
@@ -38,6 +44,9 @@
       display: block;
       font-size: 1.8vw;
       margin-bottom: 0.25em;
+      @include breakpoint(medium down) {
+        font-size: 4.5vw;
+      }
     }
 
     .learn-more {
@@ -106,7 +115,7 @@
       overflow: visible;
       width: 100%;
       height: auto;
-      min-height: 100%;
+      min-height: 100vh;
     }
   }
 

@@ -66,6 +66,11 @@ $button-background: #00006F;
   overflow: hidden;
   height: 100%;
   width: 100%;
+  @include breakpoint(medium down) {
+    overflow: visible;
+    height: auto;
+    min-height: 100vh;
+  }
 }
 
 body {

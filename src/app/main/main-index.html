@@ -2,7 +2,7 @@
   <div class="main-intro">
     <div class="container">
       <div class="row align-center">
-        <div class="small-7 columns text-center">
+        <div class="medium-7 small-9 columns text-center">
           <div>
             <img class="logo" src="assets/images/logo.png">
           </div>
@@ -18,39 +18,53 @@
           </div>
 
           <div class="start-conversation">
-            <div class="input-container">
-              <input type="text"
-                ng-model="vm.searchText"
-                placeholder="I'd like to know about..."
-              />
-              <div class="background">
-                <div style="text-align:center;">
-                  <label>?</label>
-                  &nbsp;
-                  <!-- <span ng-hide="vm.searchText.length > 0">What can we help you with?</span> -->
+
+            <!-- Desktop/tablet view show SMS form -->
+            <div class="show-for-medium">
+              <div class="input-container">
+                <input type="text"
+                  ng-model="vm.searchText"
+                  placeholder="I'd like to know about..."
+                />
+                <div class="background">
+                  <div style="text-align:center;">
+                    <label>?</label>
+                    &nbsp;
+                    <!-- <span ng-hide="vm.searchText.length > 0">What can we help you with?</span> -->
+                  </div>
                 </div>
+              </div>
+
+              <div class="input-container">
+                <input type="text"
+                  ng-model="vm.phoneNumber"
+                  placeholder="My phone number"
+                />
+                <div class="background">
+                  <div style="text-align:center;">
+                    <label>#</label>
+                    &nbsp;
+                    <!-- <span ng-hide="vm.phoneNumber.length > 0">(xxx) xxx-xxxx</span> -->
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <a class="button expanded all-caps" ng-href="{{vm.smsLink}}">
+                  <img class="chat-bubble" src="assets/images/icon-chat-bubble.png" />
+                  Text A Coach
+                </a>
               </div>
             </div>
 
-            <div class="input-container">
-              <input type="text"
-                ng-model="vm.phoneNumber"
-                placeholder="My phone number"
-              />
-              <div class="background">
-                <div style="text-align:center;">
-                  <label>#</label>
-                  &nbsp;
-                  <!-- <span ng-hide="vm.phoneNumber.length > 0">(xxx) xxx-xxxx</span> -->
-                </div>
+            <!-- Mobile view direct-link to SMS -->
+            <div class="hide-for-medium">
+              <div>
+                <a class="button expanded all-caps" ng-href="{{vm.smsLink}}">
+                  <img class="chat-bubble" src="assets/images/icon-chat-bubble.png" />
+                  Text A Coach
+                </a>
               </div>
-            </div>
-
-            <div>
-              <a class="button expanded all-caps" ng-href="{{vm.smsLink}}">
-                <img class="chat-bubble" src="assets/images/icon-chat-bubble.png" />
-                Text A Coach
-              </a>
             </div>
           </div>
 
