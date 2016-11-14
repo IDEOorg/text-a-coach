@@ -34,13 +34,13 @@
         >
           <div class="message direction_in">
             <div class="person text-center">
-              <small>{{convo.user.name}} in {{convo.user.city}}</small>
+              <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
             </div>
             {{convo.summary_question}}
           </div>
           <div class="message direction_out">
             <div class="person text-center">
-              <small>{{convo.agent.name}}, {{convo.agent.job_title}}</small>
+              <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
             </div>
             <p>{{convo.summary_answer}}</p>
             <a class="hollow-button dark expanded all-caps"
