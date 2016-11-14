@@ -1,0 +1,4 @@
+{
+  "env": "production",
+  "configApiBase": "https://text-a-coach-backend.herokuapp.com/api/v1"
+}

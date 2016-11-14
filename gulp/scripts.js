@@ -51,7 +51,7 @@ function webpackWrapper(watch, test, callback) {
     .pipe(gulp.dest(path.join(conf.paths.tmp, '/serve/app')));
 }
 
-gulp.task('scripts', function () {
+gulp.task('scripts', ['constants'], function () {
   return webpackWrapper(false, false);
 });
 

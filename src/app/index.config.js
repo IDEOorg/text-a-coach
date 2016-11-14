@@ -1,4 +1,4 @@
-export function config ($compileProvider, $logProvider, toastrConfig, DSProvider, DSHttpAdapterProvider) {
+export function config ($compileProvider, $logProvider, toastrConfig, DSProvider, DSHttpAdapterProvider, configApiBase) {
   'ngInject';
   // Enable log
   $logProvider.debugEnabled(true);
@@ -16,6 +16,6 @@ export function config ($compileProvider, $logProvider, toastrConfig, DSProvider
   angular.extend(DSProvider.defaults, {});
   // TODO: Use config for API path
   angular.extend(DSHttpAdapterProvider.defaults, {
-    basePath: 'http://localhost:3333/api/v1/' // configApiBase // https://text-a-coach-backend.herokuapp.com
+    basePath: configApiBase
   });
 }

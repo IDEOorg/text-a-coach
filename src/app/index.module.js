@@ -9,6 +9,7 @@ import { MessageFactory } from './components/conversations/message.factory';
 import { FooterDirective } from './components/footer/footer.directive';
 
 import './main/main.module.js';
+import './components/config.js';
 
 let dependencies = [
   'ngAnimate',
@@ -20,7 +21,8 @@ let dependencies = [
   'mm.foundation',
   'toastr',
   'js-data',
-  'mainStates'
+  'mainStates',
+  'components.environment'
 ];
 
 angular.module('coachApp', dependencies)

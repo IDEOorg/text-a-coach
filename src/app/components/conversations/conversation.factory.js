@@ -1,4 +1,4 @@
-export function ConversationFactory(DS, DSHttpAdapter) {
+export function ConversationFactory(DS, DSHttpAdapter, configApiBase) {
   'ngInject';
 
   return DS.defineResource({
@@ -17,7 +17,7 @@ export function ConversationFactory(DS, DSHttpAdapter) {
         params.page = page || 1;
         // TODO: Use config for API path
         let searchPromise = DSHttpAdapter
-          .GET('http://localhost:3333/api/v1/conversations/search', { params: params })
+          .GET(configApiBase+'/conversations/search', { params: params })
           .then(function(response) {
             if (response.data && response.data.length > 0) {
               return DS.inject('conversation', response.data);
