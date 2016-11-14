@@ -1,10 +1,14 @@
 export class MainSearchController {
-  constructor ($scope, $log, Conversation) {
+  constructor ($scope, $log, _, Conversation) {
     'ngInject';
 
     this.$scope = $scope;
     this.$log = $log;
     this.Conversation = Conversation;
+
+    this.searchTextCache = '';
+    this.searchPromise = null;
+    this.debounceSearch = _.throttle(this.search, 500, {leading: true, trailing: true});
 
     this.activate();
   }
@@ -17,17 +21,21 @@ export class MainSearchController {
       return conversations;
     });
 
-    this.$scope.$watch('vm.searchText', () => { this.refreshConversations() });
+    this.$scope.$watch('vm.searchText', () => { this.debounceSearch() });
   }
 
-  refreshConversations() {
+  search() {
+    if (this.searchTextCache === this.searchText) return true;
+    if (this.searchPromise && this.searchPromise.abort) this.searchPromise.abort();
     this.pending = true;
-    this.Conversation.meta.search(this.searchText, 1).then( (conversations) => {
-      this.$log.debug(conversations);
+    this.searchTextCache = this.searchText;
+    this.searchPromise = this.Conversation.meta.search(this.searchText, 1);
+    this.searchPromise.then( (conversations) => {
       this.conversations = conversations;
       this.pending = false;
       return conversations;
     });
+    return this.searchPromise;
   }
 
 }

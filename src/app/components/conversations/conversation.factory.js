@@ -1,4 +1,4 @@
-export function ConversationFactory(DS, DSHttpAdapter, configApiBase) {
+export function ConversationFactory($q, DS, DSHttpAdapter, configApiBase) {
   'ngInject';
 
   return DS.defineResource({
@@ -6,18 +6,18 @@ export function ConversationFactory(DS, DSHttpAdapter, configApiBase) {
     endpoint: 'conversations',
     meta: {
       search: function(query, platform, page) {
-        // if (searchPromise) { // && searchPromise.isPending() ?? TODO: https://github.com/kriskowal/q/wiki/API-Reference#promiseispending
-        //   searchPromise.reject('cancel');
-        // }
+        let searchAbort = $q.defer();
         let params = {};
         if (query) {
           params.query = query;
         }
         params.platform_id = platform || 1;
         params.page = page || 1;
-        // TODO: Use config for API path
         let searchPromise = DSHttpAdapter
-          .GET(configApiBase+'/conversations/search', { params: params })
+          .GET(configApiBase+'/conversations/search', {
+            params: params,
+            timeout: searchAbort.promise
+          })
           .then(function(response) {
             if (response.data && response.data.length > 0) {
               return DS.inject('conversation', response.data);
@@ -25,6 +25,15 @@ export function ConversationFactory(DS, DSHttpAdapter, configApiBase) {
               return [];
             }
           });
+
+        searchPromise.abort = function() {
+          searchAbort.resolve();
+        };
+
+        searchPromise.finally(() => {
+          searchPromise.abort = angular.noop;
+        });
+
         return searchPromise;
       }
     },

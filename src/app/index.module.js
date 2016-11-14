@@ -1,4 +1,4 @@
-/* global malarkey:false, moment:false */
+/* global _:false, moment:false */
 
 import { config } from './index.config';
 import { routerConfig } from './index.route';
@@ -26,7 +26,7 @@ let dependencies = [
 ];
 
 angular.module('coachApp', dependencies)
-  .constant('malarkey', malarkey)
+  .constant('_', _)
   .constant('moment', moment)
   .config(config)
   .config(routerConfig)
