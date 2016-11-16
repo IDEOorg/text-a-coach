@@ -10,6 +10,7 @@ import { FooterDirective } from './components/footer/footer.directive';
 import { StickyFooterDirective } from './components/footer/sticky-footer.directive';
 
 import './main/main.module.js';
+import './info/info.module.js';
 import './components/config.js';
 
 let dependencies = [
@@ -22,6 +23,7 @@ let dependencies = [
   'mm.foundation',
   'toastr',
   'js-data',
+  'infoStates',
   'mainStates',
   'components.environment'
 ];

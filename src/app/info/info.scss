@@ -1,0 +1,38 @@
+.page-info-index {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(medium down) {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .info-subview {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+
+    @include breakpoint(medium down) {
+      position: relative;
+      overflow: visible;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+    }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      &, & a {
+        color: $dark-text;
+      }
+    }
+  }
+}
