@@ -15,7 +15,7 @@ export class MainIndexController {
   }
 
   makeLink() {
-    this.smsLink = 'sms:12096626224&body=' + encodeURIComponent(this.searchText);
+    this.smsLink = 'sms:12096626224&body=' + encodeURIComponent("Enter your question");
   }
 
 }
