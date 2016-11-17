@@ -9,6 +9,12 @@
     height: auto;
     min-height: 100vh;
     overflow: visible;
+
+    &.state-main-conversation {
+      .main-intro {
+        display: none;
+      }
+    }
   }
 
   .main-intro {
