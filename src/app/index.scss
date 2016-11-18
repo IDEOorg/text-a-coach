@@ -1,0 +1,168 @@
+/**
+ *  If you want to override some foundation settings, you have to change values here.
+ *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
+ */
+$dark-background: #102D7D;
+$light-background: #FBFBF1;
+$dark-text: #00006F;
+$teal-accent: #50E3C2;
+
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Playfair+Display:900');
+
+@mixin serif {
+  font-family: 'Playfair Display', Georgia, Times, serif;
+  font-weight: 900;
+}
+
+@mixin sans-serif {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+
+/**
+ *  The import of foundation is made manually because there is still no links of the
+ *  sass version in their bower.json...
+ */
+@import '../../bower_components/foundation-sites/scss/foundation';
+
+// MOTION UI VARIABLES
+$motion-ui-classes: (
+  chain: true,
+  prefix: 'ng-',
+  active: '-active',
+);
+
+$motion-ui-states: (
+  in: ('enter', 'hide-add'),
+  out: ('leave', 'hide-remove'),
+);
+
+@import '../../bower_components/motion-ui/src/motion-ui';
+
+// FOUNDAITON VARIABLES
+$global-lineheight: 1.2;
+$paragraph-lineheight: 1.2;
+$button-background: #00006F;
+// $foundation-palette: (
+//   primary: #00006F
+// );
+
+
+@include foundation-everything(true);
+@include motion-ui-transitions;
+@include motion-ui-animations;
+
+/**
+ *  Do not remove the comments below. It's the markers used by wiredep to inject
+ *  sass dependencies when defined in the bower.json of your dependencies
+ */
+// bower:scss
+// endbower
+
+.app-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  @include breakpoint(medium down) {
+    overflow: visible;
+    height: auto;
+    min-height: 100vh;
+  }
+}
+
+body {
+  background-color: $light-background;
+  color: $dark-background;
+  height: 100%;
+  width: 100%;
+  @include sans-serif;
+}
+
+h1, h2, h3 {
+  @include serif;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+.hollow-button {
+  display: inline-block;
+  padding: 0.75em 1em;
+  margin: 0 0 1rem 0;
+  font-size: #{map-get($button-sizes, 'default')};
+  vertical-align: middle;
+
+  &.expanded {
+    display: block;
+    text-align: center;
+  }
+
+  &.dark {
+    border: 1px solid $dark-background;
+    color: $dark-text;
+  }
+
+  &.teal {
+    border: 1px solid $teal-accent;
+    color: $teal-accent;
+  }
+
+  &.light {
+    border: 1px solid white;
+    color: white;
+  }
+
+  .material-icons {
+    vertical-align: middle;
+  }
+
+}
+
+.opacity-25 {
+  opacity: 0.25;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+
+.spinner {
+  display: block;
+  z-index: 0;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5em;
+  margin-left: -1.5em;
+  border: solid 3px;
+  border-radius: 1000px;
+  &.light {
+    border-color: $light-background transparent;
+  }
+  &.dark {
+    border-color: $dark-background transparent;
+  }
+  // @ include mui-animation(spin(in, 180deg));
+}
+
+/**
+ *  Do not remove the comments below. It's the markers used by gulp-inject to inject
+ *  all your sass files automatically
+ */
+// injector
+// endinjector

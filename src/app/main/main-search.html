@@ -1,0 +1,67 @@
+<div class="main-search container">
+  <div class="row align-center">
+    <div class="small-8 columns text-center">
+      <h3>Money conversations we're having&hellip;</h3>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-left">
+      <div class="input-container">
+        <input type="text"
+          ng-model="vm.searchText"
+          placeholder="Search by keyword or question..."
+        />
+        <div class="background">
+          <div style="text-align:center;">
+            <label><i class="material-icons">search</i></label>
+            &nbsp;
+            <!-- <span ng-hide="vm.searchText.length > 0">(xxx) xxx-xxxx</span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-left">
+      <div class="spinner light spin-cw slow infinite fade-in fade-out"
+        ng-if="vm.pending"
+      ></div>
+      <div class="fade-in fade-out"
+        ng-if="!vm.pending"
+      >
+        <div class="conversation"
+          ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+        >
+          <div class="message direction_in">
+            <div class="person text-center">
+              <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+            </div>
+            {{convo.summary_question}}
+          </div>
+          <div class="message direction_out summary">
+            <div class="person text-center">
+              <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+            </div>
+            <p>{{convo.teaser_answer}}</p>
+            <a class="hollow-button dark expanded all-caps"
+              ui-sref="^.conversation({conversation_id: convo.id})"
+            >
+              See Full Conversation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-center">
+      <!-- TODO: Implement results paging with API -->
+      <a class="hollow-button teal all-caps"
+        ng-show="vm.limitTo !== false"
+        ng-click="vm.limitTo = false"
+      >
+        Show More Conversations
+      </a>
+    </div>
+  </div>
+</div>

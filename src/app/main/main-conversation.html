@@ -1,0 +1,54 @@
+<div class="main-conversation container">
+  <div class="row align-center">
+    <div class="small-10 columns text-center">
+      <a class="hollow-button teal all-caps"
+        ng-click="vm.goBack()"
+      >
+        <i class="material-icons">chevron_left</i> Back To Conversations
+      </a>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-left">
+      <div class="conversation">
+        <div ng-if="vm.conversation.messages.length > 0">
+          <div class="message"
+            ng-repeat="message in vm.conversation.messages"
+            ng-class="message.direction"
+          >
+            <div class="person text-center" ng-show="message.direction === 'direction_out'">
+              <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+            </div>
+            <div class="person text-center" ng-show="message.direction === 'direction_in'">
+              <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
+            </div>
+            {{message.message}}
+          </div>
+        </div>
+        <div ng-if="vm.conversation.messages.length === 0">
+          <div class="message direction_in">
+            <div class="person text-center">
+              <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
+            </div>
+            {{vm.conversation.summary_question}}
+          </div>
+          <div class="message direction_out">
+            <div class="person text-center">
+              <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+            </div>
+            <p>{{vm.conversation.summary_answer}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row align-center">
+    <div class="small-10 columns text-center">
+      <a class="hollow-button teal all-caps"
+        ng-click="vm.goBack()"
+      >
+        <i class="material-icons">chevron_left</i> Back To Conversations
+      </a>
+    </div>
+  </div>
+</div>
