@@ -6,3 +6,4 @@ coverage/
 .tmp/
 dist/
 src/app/components/config.js
+old/
