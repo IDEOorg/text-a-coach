@@ -8,7 +8,7 @@ $dark-text: #00006F;
 $teal-accent: #50E3C2;
 
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:700|Playfair+Display:900');
+@import url('https://fonts.googleapis.com/css?family=Poppins:500|Playfair+Display:900');
 
 @mixin serif {
   font-family: 'Playfair Display', Georgia, Times, serif;
@@ -16,8 +16,8 @@ $teal-accent: #50E3C2;
 }
 
 @mixin sans-serif {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  font-weight: 700;
+  font-family: 'Poppins', Helvetica, Arial, sans-serif;
+  font-weight: 500;
 }
 
 
@@ -44,7 +44,7 @@ $motion-ui-states: (
 // FOUNDAITON VARIABLES
 $global-lineheight: 1.2;
 $paragraph-lineheight: 1.2;
-$button-background: #00006F;
+$button-background: $dark-background;
 // $foundation-palette: (
 //   primary: #00006F
 // );
