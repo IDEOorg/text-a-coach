@@ -23,33 +23,41 @@
 
             <!-- Desktop/tablet view show SMS form -->
             <div class="show-for-medium">
-              <div class="input-container">
-                <input type="text"
-                  ng-model="vm.searchText"
-                  placeholder="I'd like to know about..."
-                />
-                <div class="background">
-                  <div style="text-align:center;">
-                    <label>?</label>
-                    &nbsp;
-                    <!-- <span ng-hide="vm.searchText.length > 0">What can we help you with?</span> -->
+              <div ng-if="false">
+
+                <div class="input-container">
+                  <input type="text"
+                    ng-model="vm.searchText"
+                    placeholder="I'd like to know about..."
+                  />
+                  <div class="background">
+                    <div style="text-align:center;">
+                      <label>?</label>
+                      &nbsp;
+                      <!-- <span ng-hide="vm.searchText.length > 0">What can we help you with?</span> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="input-container">
+                  <input type="text"
+                    ng-model="vm.phoneNumber"
+                    placeholder="My phone number"
+                  />
+                  <div class="background">
+                    <div style="text-align:center;">
+                      <label>#</label>
+                      &nbsp;
+                      <!-- <span ng-hide="vm.phoneNumber.length > 0">(xxx) xxx-xxxx</span> -->
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div class="input-container">
-                <input type="text"
-                  ng-model="vm.phoneNumber"
-                  placeholder="My phone number"
-                />
-                <div class="background">
-                  <div style="text-align:center;">
-                    <label>#</label>
-                    &nbsp;
-                    <!-- <span ng-hide="vm.phoneNumber.length > 0">(xxx) xxx-xxxx</span> -->
-                  </div>
-                </div>
-              </div>
+              <p>
+                Text us at:<br />
+                (646) 291-6384
+              </p>
 
               <div>
                 <a class="button expanded all-caps" ng-href="{{vm.smsLink}}">
