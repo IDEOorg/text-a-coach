@@ -96,6 +96,10 @@ h1, h2, h3 {
   font-size: #{map-get($button-sizes, 'default')};
   vertical-align: middle;
 
+  &.with-icon {
+    padding-right: 1.75rem;
+  }
+
   &.expanded {
     display: block;
     text-align: center;
