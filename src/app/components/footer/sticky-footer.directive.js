@@ -8,6 +8,8 @@ export function StickyFooterDirective($window, _) {
       active: '=?'
     },
     link: (scope, element, attrs) => {
+      scope.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
+
       let scrollTarget = angular.element(attrs.scrollTarget),
           windowEl = angular.element($window);
       let scrollFn = () => {

@@ -15,7 +15,7 @@ export class MainIndexController {
   }
 
   makeLink() {
-    this.smsLink = 'sms:12096626224&body=' + encodeURIComponent("Enter your question");
+    this.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
   }
 
 }
