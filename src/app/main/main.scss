@@ -112,8 +112,6 @@
     background-color: $dark-background;
     color: $light-background;
     position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
     height: 100%;
     width: 50%;
     @include breakpoint(medium down) {
@@ -127,6 +125,10 @@
     @include breakpoint(large up) {
       .uiview {
         position: relative;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+
         &.ng-enter, &.ng-leave {
           position: absolute;
           left: 0;
