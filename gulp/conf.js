@@ -7,16 +7,29 @@
  */
 
 var gutil = require('gulp-util');
+var yargs = require('yargs').argv;
 
-/**
- *  The main paths of your project handle these with care
- */
-exports.paths = {
+if(!yargs || !yargs.env) {
+  yargs.env = 'prod';
+}
+
+var paths = {
   src: 'src',
   dist: 'dist',
   tmp: '.tmp',
   e2e: 'e2e'
 };
+
+// switch dist folder to our gh-pages folder
+// when building for production
+if (yargs.env.toLowerCase() === 'prod') {
+  paths.dist = 'docs';
+}
+
+/**
+ *  The main paths of your project handle these with care
+ */
+exports.paths = paths;
 
 /**
  *  Wiredep is the lib which inject bower dependencies in your project
