@@ -31,7 +31,7 @@ Your app should be available at http://localhost:3000/
 Run the production build with the following:
 
 ```
-gulp build --env=prod
+gulp --env=prod
 ```
 
-Grab the resulting files inside `/dist`
+The resulting built files will be inside `/docs`. Commit these to master in order to auto-update the website via Github Pages.
