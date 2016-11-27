@@ -14,6 +14,10 @@ export function routerConfig ($stateProvider) {
       templateUrl: 'app/info/info-about.html',
       controller: 'InfoAboutController',
       controllerAs: 'vm'
+    })
+    .state('info.terms', {
+      url: '/terms',
+      templateUrl: 'app/info/info-terms.html'
     });
 
 }

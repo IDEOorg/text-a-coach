@@ -38,6 +38,8 @@
 
     /* Any page that is text heavy, such as About or Privacy */
     .page-info {
+      position: relative;
+      padding-bottom: 30px;
 
       h1 {
         margin: 30px 0;
@@ -55,7 +57,7 @@
         font-family: sans-serif;
       }
 
-      p {
+      p, ul {
         font-weight: 100;
 
         font-family: sans-serif;
