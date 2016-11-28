@@ -1,8 +1,9 @@
 export class MainConversationController {
-  constructor ($scope, $window, $log, $anchorScroll, conversation) {
+  constructor ($scope, $state, $window, $log, $anchorScroll, conversation) {
     'ngInject';
 
     this.$log = $log;
+    this.$state = $state;
     this.$window = $window;
     this.$anchorScroll = $anchorScroll;
     this.conversation = conversation;
@@ -15,7 +16,8 @@ export class MainConversationController {
   }
 
   goBack() {
-    this.$window.history.back();
+    // this.$window.history.back();
+    this.$state.go('main.search', {returning: 1});
   }
 
 }
