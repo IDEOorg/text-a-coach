@@ -21,13 +21,19 @@ export class MainIndexController {
         // scroll to main conversations list on mobile
         // when returning from a conversation details page
         this.scrollToConversations = true;
+      } else {
+        this.scrollToConversations = false;
       }
     });
     $scope.$on('$viewContentLoaded', (event) => {
       if (this.scrollToConversations) {
         this.$timeout( () => {
           this.$anchorScroll('main-subview');
-        });
+        }, 100);
+      } else {
+        this.$timeout( () => {
+          this.$anchorScroll();
+        }, 100);
       }
     });
     this.makeLink();
