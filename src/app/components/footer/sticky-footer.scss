@@ -5,9 +5,10 @@
   padding: 0.5em 0 0;
   font-size: 2em;
   background-color: $light-background;
+  display: none;
 
-  @include breakpoint(large up) {
-    display: none !important;
+  @include breakpoint(small down) {
+    display: block !important;
   }
 
   &.ng-hide-add, &.ng-hide-remove {
