@@ -39,6 +39,10 @@ export class MainIndexController {
     this.makeLink();
   }
 
+  startConversation() {
+    mixpanel.track("Start Conversation Button Clicked");
+  }
+
   makeLink() {
     this.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
   }
