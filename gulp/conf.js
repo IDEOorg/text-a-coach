@@ -20,12 +20,6 @@ var paths = {
   e2e: 'e2e'
 };
 
-// switch dist folder to our gh-pages folder
-// when building for production
-if (yargs.env.toLowerCase() === 'prod') {
-  paths.dist = 'docs';
-}
-
 /**
  *  The main paths of your project handle these with care
  */
