@@ -1,0 +1,16 @@
+{
+  "folders":
+  [
+    {
+      "path": ".",
+      "folder_exclude_patterns": [
+        ".tmp",
+        "bower_components",
+        "dist",
+        "node_modules"
+      ]
+    }
+  ],
+  "settings": {}
+}
+
