@@ -5,13 +5,13 @@ export function ConversationFactory($q, DS, DSHttpAdapter, configApiBase) {
     name: 'conversation',
     endpoint: 'conversations',
     meta: {
-      search: function(query, platform, page) {
+      search: function(query, flavor, page) {
         let searchAbort = $q.defer();
         let params = {};
         if (query) {
           params.query = query;
         }
-        params.platform_id = platform || 1;
+        params.flavor_id = flavor || 1;
         params.page = page || 1;
         let searchPromise = DSHttpAdapter
           .GET(configApiBase+'/conversations/search', {
