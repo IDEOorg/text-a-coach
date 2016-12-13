@@ -1,23 +1,22 @@
-<div class="main-index"
-  ng-class="vm.stateName"
->
+<div class="main-index">
+  <div sticky-header scroll-target=".main-subview"></div>
+
   <div class="main-intro">
     <div class="container">
       <div class="row align-center">
         <div class="medium-7 small-9 columns text-center">
+          <h1 class="text-center page-title">
+            <b>MoneyPeople</b>
+          </h1>
           <div>
             <img class="logo" src="assets/images/logo.png">
           </div>
-          <h1>
-            We are a network of <br />
-            financial coaches providing<br />
-            FREE money advice.
-          </h1>
-          <div>
-            <a class="learn-more" ui-sref="info.about">
-              LEARN MORE
-            </a>
-          </div>
+          <h3>
+            Hi, we're MoneyPeople.
+          </h3>
+          <h3>
+            We provide expert advice to guide you through your financial goals, challenges, or other decisions.
+          </h3>
 
           <div class="start-conversation">
 
@@ -66,9 +65,8 @@
             <!-- Mobile view direct-link to SMS -->
             <div class="hide-for-medium">
               <div>
-                <a class="button expanded all-caps" ng-href="{{vm.smsLink}}" ng-click="vm.startConversation()">
-                  <img class="chat-bubble" src="assets/images/icon-chat-bubble.png" />
-                  Text A Coach
+                <a class="hollow-button green expanded all-caps" ng-href="{{vm.smsLink}}" ng-click="vm.startConversation()">
+                  ASK US A MONEY QUESTION
                 </a>
               </div>
             </div>
@@ -77,77 +75,53 @@
         </div>
       </div>
     </div>
-
-    <div footer></div>
   </div>
 
   <div class="main-subview" id="main-subview">
-    <div class="uiview" ui-view="subview"></div>
+    <div class="container">
+      <div class="row align-center">
+        <div class="medium-4 small-12 columns text-center feature">
+          <img class="icon" src="assets/images/icon-heart.png">
+          <h3>We don't judge you.</h3>
+          <p>No situation is surprising to us or should be embarassing for you.</p>
+        </div>
+        <div class="medium-4 small-12 columns text-center feature">
+          <img class="icon" src="assets/images/icon-talk.png">
+          <h3>We don't talk like bankers.</h3>
+          <p>Money terms can get complex &mdash; we'll help you make sense of them.</p>
+        </div>
+        <div class="medium-4 small-12 columns text-center feature">
+          <img class="icon" src="assets/images/icon-gift.png">
+          <h3>We don't ask for money.</h3>
+          <p>Our text messaging service is totally FREE. (But message and data rates may apply.)</p>
+        </div>
+      </div>
+      <div class="row align-center topics-area">
+        <div class="medium-4 small-12 columns text-center">
+          <h3>Topics we get asked about a lot:</h3>
+          <a class="hollow-button dark with-icon all-caps">
+            <i class="material-icons">bug_report</i>
+            END OF THE MONTH
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <i class="material-icons">bug_report</i>
+            DEBT
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <i class="material-icons">bug_report</i>
+            MARRIAGE
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <i class="material-icons">bug_report</i>
+            SMALL BUSINESS
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <div sticky-footer scroll-target=".main-subview"></div>
 
-  <!--
-  <div class="recent-questions">
-    <div class="row">
-      <div class="small-12 columns">
-        <p align="center"><small>Filter by topic or search keywords or questions</small></p>
-      </div>
-    </div>
-
-    <div class="row align-center">
-      <div class="small-9 columns text-center">
-        <div class="icon-btn"
-          style="background-image: url(assets/images/icon-1.svg);"
-        ></div>
-        <div class="icon-btn"
-          style="background-image: url(assets/images/icon-2.svg);"
-        ></div>
-        <div class="icon-btn"
-          style="background-image: url(assets/images/icon-3.svg);"
-        ></div>
-        <div class="icon-btn"
-          style="background-image: url(assets/images/icon-4.svg);"
-        ></div>
-        <div class="icon-btn"
-          style="background-image: url(assets/images/icon-5.svg);"
-        ></div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-6 columns">
-        <div class="question">
-          <strong>Q:</strong><br />
-          Question related to starting a business for the first time?<br />
-          &mdash; Brooklyn NY
-        </div>
-      </div>
-      <div class="small-6 columns">
-        <div class="question">
-          <strong>Q:</strong><br />
-          Question related to starting a business for the first time?<br />
-          &mdash; Brooklyn NY
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-6 columns">
-        <div class="question">
-          <strong>Q:</strong><br />
-          Question related to starting a business for the first time?<br />
-          &mdash; Brooklyn NY
-        </div>
-      </div>
-      <div class="small-6 columns">
-        <div class="question">
-          <strong>Q:</strong><br />
-          Question related to starting a business for the first time?<br />
-          &mdash; Brooklyn NY
-        </div>
-      </div>
-    </div>
-  </div>
-  -->
+  <div footer></div>
 </div>

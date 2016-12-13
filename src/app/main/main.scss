@@ -9,28 +9,18 @@
     height: auto;
     min-height: 100vh;
     overflow: visible;
+  }
 
-    &.state-main-conversation {
-      .main-intro {
-        display: none;
-      }
-    }
+  .page-title {
+    padding: 20px 0;
   }
 
   .main-intro {
-    position: absolute;
-    overflow-x: hidden;
-    overflow-y: auto;
-    height: 100%;
-    width: 50%;
-
-    @include breakpoint(medium down) {
-      position: relative;
-      overflow: visible;
-      width: 100%;
-      height: auto;
-      min-height: 100vh;
-    }
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
 
     .footer {
       position: absolute;
@@ -42,8 +32,8 @@
     }
 
     .logo {
-      padding: 8vh 0 6vh;
-      max-width: 25%;
+      padding: 8vh 0;
+      max-width: 50%;
     }
 
     h1 {
@@ -67,7 +57,7 @@
       .input-container {
         position: relative;
         margin-bottom: 15px;
-        border: 2px solid $teal-accent;
+        border: 2px solid $accent-color;
         border-radius: 20px;
         background-color: white;
 
@@ -80,7 +70,7 @@
             right: 0.5em;
             font-size: 1.5em;
             font-weight: bold;
-            color: $teal-accent;
+            color: $accent-color;
           }
         }
 
@@ -108,18 +98,29 @@
   }
 
   .main-subview {
-    right: 0;
-    background-color: $dark-background;
-    color: $light-background;
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    @include breakpoint(medium down) {
-      position: relative;
-      overflow: visible;
-      width: 100%;
-      height: auto;
-      min-height: 100vh;
+    position: relative;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+
+    .feature {
+      padding: 0 2em;
+
+      .icon {
+        width: 53px;
+        padding: 3em 0 1em;
+      }
+      h3 {
+        color: $accent-color;
+      }
+    }
+
+    .topics-area {
+      background-color: $soft-background;
+      border-top: 1px solid $light-border;
+      border-bottom: 1px solid $light-border;
+      padding: 2em 0;
     }
 
     @include breakpoint(large up) {
@@ -174,7 +175,7 @@
     padding-top: 10%;
     padding-bottom: 5em;
     h3 {
-      color: $teal-accent;
+      color: $accent-color;
       margin-bottom: 40px;
     }
 

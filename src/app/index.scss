@@ -3,17 +3,14 @@
  *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
  */
 $dark-background: #102D7D;
-$light-background: #FBFBF1;
-$dark-text: #00006F;
-$teal-accent: #50E3C2;
+$soft-background: #FCFCFC;
+$light-background: #FFF;
+$light-border: #e3e3e3;
+$dark-text: #4A4A4A;
+$accent-color: #61dd79;
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:500|Playfair+Display:900');
-
-@mixin serif {
-  font-family: 'Playfair Display', Georgia, Times, serif;
-  font-weight: 900;
-}
+@import url('https://fonts.googleapis.com/css?family=Poppins:500');
 
 @mixin sans-serif {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
@@ -42,8 +39,8 @@ $motion-ui-states: (
 @import '../../bower_components/motion-ui/src/motion-ui';
 
 // FOUNDAITON VARIABLES
-$global-lineheight: 1.2;
-$paragraph-lineheight: 1.2;
+$global-lineheight: 1.7;
+$paragraph-lineheight: 1.7;
 $button-background: $dark-background;
 // $foundation-palette: (
 //   primary: #00006F
@@ -61,7 +58,7 @@ $button-background: $dark-background;
 // bower:scss
 // endbower
 
-.app-container {
+.app-container, .app-container-inner {
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -75,14 +72,10 @@ $button-background: $dark-background;
 
 body {
   background-color: $light-background;
-  color: $dark-background;
+  color: $dark-text;
   height: 100%;
   width: 100%;
   @include sans-serif;
-}
-
-h1, h2, h3 {
-  @include serif;
 }
 
 .all-caps {
@@ -91,6 +84,7 @@ h1, h2, h3 {
 
 .hollow-button {
   display: inline-block;
+  border-radius: 2.5em;
   padding: 0.75em 1em;
   margin: 0 0 1rem 0;
   font-size: #{map-get($button-sizes, 'default')};
@@ -106,13 +100,14 @@ h1, h2, h3 {
   }
 
   &.dark {
-    border: 1px solid $dark-background;
+    border: 1px solid $dark-text;
     color: $dark-text;
+    background-color: white;
   }
 
-  &.teal {
-    border: 1px solid $teal-accent;
-    color: $teal-accent;
+  &.green {
+    border: 1px solid $accent-color;
+    color: $accent-color;
   }
 
   &.light {
