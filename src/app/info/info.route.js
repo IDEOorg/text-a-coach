@@ -19,6 +19,10 @@ export function routerConfig ($stateProvider) {
       url: '/terms',
       templateUrl: 'app/info/info-terms.html'
     })
+    .state('info.privacy', {
+      url: '/privacy',
+      templateUrl: 'app/info/info-privacy.html'
+    })
     .state('info.service', {
       url: '/service-terms',
       templateUrl: 'app/info/info-service-terms.html'
