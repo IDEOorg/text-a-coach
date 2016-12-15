@@ -6,7 +6,7 @@ export class ViewportService {
     this.$window = angular.element($window);
     this.$rootScope = $rootScope;
 
-    this.$window.resize(this.resize);
+    this.$window.resize(this.resize.bind(this));
   }
 
   resize () {
