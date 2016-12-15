@@ -5,16 +5,16 @@
 $dark-background: #102D7D;
 $soft-background: #FCFCFC;
 $light-background: #FFF;
-$light-border: #e3e3e3;
-$dark-text: #4A4A4A;
+$light-border: #e5e5e5;
+$dark-text: #3c3c3c;
 $accent-color: #61dd79;
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:500');
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
 @mixin sans-serif {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
+  font-weight: 400;
 }
 
 
@@ -80,6 +80,11 @@ body {
 
 .all-caps {
   text-transform: uppercase;
+}
+
+h1, h2, h3 {
+  @include sans-serif;
+  font-weight: 700;
 }
 
 .hollow-button {

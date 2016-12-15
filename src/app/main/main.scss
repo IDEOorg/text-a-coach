@@ -104,15 +104,20 @@
     height: auto;
     min-height: 100vh;
 
-    .feature {
-      padding: 0 2em;
+    .feature-row {
+      padding: 3em 0;
+      border-top: 1px solid $light-border;
 
-      .icon {
-        width: 53px;
-        padding: 3em 0 1em;
-      }
-      h3 {
-        color: $accent-color;
+      .feature {
+        padding: 0 2em;
+
+        .icon {
+          width: 53px;
+          padding: 0 0 1em;
+        }
+        h3 {
+          color: $accent-color;
+        }
       }
     }
 
@@ -121,6 +126,9 @@
       border-top: 1px solid $light-border;
       border-bottom: 1px solid $light-border;
       padding: 2em 0;
+      .hollow-button.dark {
+        border-color: $light-border;
+      }
     }
 
     @include breakpoint(large up) {
