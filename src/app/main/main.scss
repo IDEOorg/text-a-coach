@@ -94,6 +94,11 @@
         width: 1em;
         margin-right: 0.5em;
       }
+
+      .button.phone-number {
+        font-size: 1.2em;
+        letter-spacing: 0.1em;
+      }
     }
   }
 
@@ -104,7 +109,7 @@
     height: auto;
     min-height: 100vh;
 
-    .feature-row {
+    .feature-area {
       padding: 3em 0;
       border-top: 1px solid $light-border;
 
@@ -115,7 +120,7 @@
           width: 53px;
           padding: 0 0 1em;
         }
-        h3 {
+        h4 {
           color: $accent-color;
         }
       }
@@ -125,9 +130,20 @@
       background-color: $soft-background;
       border-top: 1px solid $light-border;
       border-bottom: 1px solid $light-border;
-      padding: 2em 0;
+      padding: 4em 0;
+
       .hollow-button.dark {
         border-color: $light-border;
+      }
+      h3 {
+        margin-bottom: 1em;
+      }
+    }
+
+    .advice-area {
+      padding: 4em 0 2em;
+      h3 {
+        margin-bottom: 1em;
       }
     }
 

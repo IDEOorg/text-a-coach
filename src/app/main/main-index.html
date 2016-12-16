@@ -53,11 +53,12 @@
                 </div>
               </div>
 
-              Text a Coach at:
+              <h4>
+                Text us a money question now:
+              </h4>
               <div style="padding-top: 0.5em;">
-                <a class="button expanded all-caps">
-                  <img class="chat-bubble" src="assets/images/icon-chat-bubble.png" />
-                  (646) 291-6384
+                <a class="button phone-number all-caps">
+                  646-291-6384
                 </a>
               </div>
             </div>
@@ -78,43 +79,102 @@
   </div>
 
   <div class="main-subview" id="main-subview">
-    <div class="container">
-      <div class="row align-center feature-row">
+    <div class="container feature-area">
+      <div class="row align-center">
         <div class="medium-4 small-12 columns text-center feature">
           <img class="icon" src="assets/images/icon-heart.png">
-          <h3>We don't judge you.</h3>
+          <h4>We don't judge you.</h4>
           <p>No situation is surprising to us or should be embarassing for you.</p>
         </div>
         <div class="medium-4 small-12 columns text-center feature">
           <img class="icon" src="assets/images/icon-talk.png">
-          <h3>We don't talk like bankers.</h3>
+          <h4>We don't talk like bankers.</h4>
           <p>Money terms can get complex &mdash; we'll help you make sense of them.</p>
         </div>
         <div class="medium-4 small-12 columns text-center feature">
           <img class="icon" src="assets/images/icon-gift.png">
-          <h3>We don't ask for money.</h3>
+          <h4>We don't ask for money.</h4>
           <p>Our text messaging service is totally FREE. (But message and data rates may apply.)</p>
         </div>
       </div>
-      <div class="row align-center topics-area">
-        <div class="medium-4 small-12 columns text-center">
+    </div>
+    <div class="container topics-area">
+      <div class="row align-center">
+        <div class="medium-7 small-12 columns text-center">
           <h3>Topics we get asked about a lot:</h3>
           <a class="hollow-button dark with-icon all-caps">
-            <i class="material-icons">bug_report</i>
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-1.png" />
             END OF THE MONTH
           </a>
           <a class="hollow-button dark with-icon all-caps">
-            <i class="material-icons">bug_report</i>
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-2.png" />
             DEBT
           </a>
           <a class="hollow-button dark with-icon all-caps">
-            <i class="material-icons">bug_report</i>
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-3.png" />
+            BUDGET
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-4.png" />
+            STRESS
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-5.png" />
             MARRIAGE
           </a>
           <a class="hollow-button dark with-icon all-caps">
-            <i class="material-icons">bug_report</i>
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-6.png" />
+            TAX SEASON
+          </a>
+          <a class="hollow-button dark with-icon all-caps">
+            <!-- <i class="material-icons">bug_report</i> -->
+            <img class="icon" src="assets/images/emoji-icon-7.png" />
             SMALL BUSINESS
           </a>
+        </div>
+      </div>
+    </div>
+    <div class="container advice-area">
+      <div class="row align-center">
+        <div class="medium-7 small-12 columns text-center">
+          <h3>
+            Advice we've given other people:
+          </h3>
+        </div>
+      </div>
+      <div class="row align-center">
+        <div class="medium-6 small-12 columns"
+          ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+        >
+          <div class="conversation">
+            <div class="message direction_in">
+              <p>
+                {{convo.summary_question}}
+              </p>
+              <div class="person">
+                <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+              </div>
+            </div>
+            <div class="message direction_out summary">
+              <p>
+                {{convo.teaser_answer}}
+              </p>
+              <div class="person">
+                <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+              </div>
+            </div>
+            <a class="read-more-button text-center all-caps"
+              ui-sref="^.conversation({conversation_id: convo.id})"
+            >
+              Read Full Conversation
+            </a>
+          </div>
         </div>
       </div>
     </div>

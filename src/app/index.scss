@@ -7,6 +7,7 @@ $soft-background: #FCFCFC;
 $light-background: #FFF;
 $light-border: #e5e5e5;
 $dark-text: #3c3c3c;
+$medium-text: #9B9B9B;
 $accent-color: #61dd79;
 
 
@@ -41,7 +42,7 @@ $motion-ui-states: (
 // FOUNDAITON VARIABLES
 $global-lineheight: 1.7;
 $paragraph-lineheight: 1.7;
-$button-background: $dark-background;
+$button-background: $accent-color;
 // $foundation-palette: (
 //   primary: #00006F
 // );
@@ -82,21 +83,27 @@ body {
   text-transform: uppercase;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   @include sans-serif;
   font-weight: 700;
+}
+
+.button {
+  border-radius: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
 }
 
 .hollow-button {
   display: inline-block;
   border-radius: 2.5em;
-  padding: 0.75em 1em;
+  padding: 0.75em 1.25em;
   margin: 0 0 1rem 0;
   font-size: #{map-get($button-sizes, 'default')};
   vertical-align: middle;
 
   &.with-icon {
-    padding-right: 1.75rem;
+    // padding-right: 1.75rem;
   }
 
   &.expanded {
@@ -122,6 +129,14 @@ h1, h2, h3 {
 
   .material-icons {
     vertical-align: middle;
+  }
+
+  .icon {
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 0.3em;
+    height: 1.2em;
+    width: auto;
   }
 
 }
