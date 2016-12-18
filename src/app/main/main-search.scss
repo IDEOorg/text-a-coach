@@ -59,5 +59,18 @@
       margin-bottom: 1em;
     }
   }
+
+  .results-area {
+    background: $soft-background;
+  }
+
+  .ask-area {
+    border-top: 1px solid $light-border;
+    padding: 5% 0;
+    h4 {
+      margin: 0;
+      line-height: 1;
+    }
+  }
 }
 

@@ -60,48 +60,63 @@
         </div>
       </div>
     </div>
-    <div class="container" ng-if="vm.searchText.length">
-      <div class="row align-center">
-        <div class="small-10 columns text-left">
-          <div class="spinner light spin-cw slow infinite fade-in fade-out"
-            ng-if="vm.pending"
-          ></div>
-          <div class="fade-in fade-out"
-            ng-if="!vm.pending"
-          >
-            <div class="conversation"
-              ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+    <div ng-if="vm.searchText.length">
+      <div class="container results-area">
+        <div class="row align-center">
+          <div class="small-10 columns text-left">
+            <div class="spinner light spin-cw slow infinite fade-in fade-out"
+              ng-if="vm.pending"
+            ></div>
+            <div class="fade-in fade-out"
+              ng-if="!vm.pending"
             >
-              <div class="message direction_in">
-                <div class="person text-center">
-                  <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+              <div class="conversation"
+                ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+              >
+                <div class="message direction_in">
+                  <div class="person text-center">
+                    <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+                  </div>
+                  {{convo.summary_question}}
                 </div>
-                {{convo.summary_question}}
-              </div>
-              <div class="message direction_out summary">
-                <div class="person text-center">
-                  <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+                <div class="message direction_out summary">
+                  <div class="person text-center">
+                    <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+                  </div>
+                  <p>{{convo.teaser_answer}}</p>
+                  <a class="hollow-button dark expanded all-caps"
+                    ui-sref="^.conversation({conversation_id: convo.id})"
+                  >
+                    See Full Conversation
+                  </a>
                 </div>
-                <p>{{convo.teaser_answer}}</p>
-                <a class="hollow-button dark expanded all-caps"
-                  ui-sref="^.conversation({conversation_id: convo.id})"
-                >
-                  See Full Conversation
-                </a>
               </div>
             </div>
           </div>
         </div>
+        <div class="row align-center">
+          <div class="small-10 columns text-center">
+            <!-- TODO: Implement results paging with API -->
+            <a class="hollow-button teal all-caps"
+              ng-show="vm.limitTo !== false && vm.conversations.length > vm.limitTo"
+              ng-click="vm.limitTo = false"
+            >
+              Show More Conversations
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="row align-center">
-        <div class="small-10 columns text-center">
-          <!-- TODO: Implement results paging with API -->
-          <a class="hollow-button teal all-caps"
-            ng-show="vm.limitTo !== false"
-            ng-click="vm.limitTo = false"
-          >
-            Show More Conversations
-          </a>
+      <div class="container ask-area">
+        <div class="row align-center">
+          <div class="small-8 columns text-center">
+            <h4>Don't see what you're looking for?</h4>
+            <h4>Text us a money question now:</h4>
+            <div style="padding-top: 0.5em;">
+              <a class="button phone-number all-caps">
+                646-291-6384
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
