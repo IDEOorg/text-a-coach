@@ -1,0 +1,57 @@
+.sticky-header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 2em 0;
+  font-size: 1em;
+  background-color: $light-background;
+  box-shadow: 0 1px 4px #ccc;
+  z-index: 10;
+
+  // display: none;
+  // @include breakpoint(small down) {
+  //   display: block !important;
+  // }
+
+  &.ng-hide-add, &.ng-hide-remove {
+    -webkit-transition:all .5s ease-in-out;
+      -moz-transition:all .5s ease-in-out;
+      -o-transition:all .5s ease-in-out;
+      transition:all .5s ease-in-out;
+  }
+
+  &.ng-hide-add {
+    opacity: 1;
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+  }
+
+  &.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    -webkit-transform:translate3d(0, -100%, 0);
+    -moz-transform:translate3d(0, -100%, 0);
+    transform:translate3d(0, -100%, 0);
+  }
+
+  &.ng-hide-remove {
+    opacity: 0;
+    -webkit-transform:translate3d(0, -100%, 0);
+    -moz-transform:translate3d(0, -100%, 0);
+    transform:translate3d(0, -100%, 0);
+  }
+
+  &.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+  }
+
+  .search-button {
+    color: $accent-color;
+    .material-icons {
+      vertical-align: middle;
+    }
+  }
+}
