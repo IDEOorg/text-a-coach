@@ -29,16 +29,9 @@
   }
 
   .info-subview {
-    .footer {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
 
     /* Any page that is text heavy, such as About or Privacy */
     .page-info {
-      position: relative;
-      padding-bottom: 12%;
       min-height: 100%;
 
       h1 {
