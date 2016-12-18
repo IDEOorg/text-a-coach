@@ -16,98 +16,83 @@
   }
 
   .main-intro {
-    position: relative;
-    overflow: visible;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
-
-    .footer {
-      position: absolute;
-      bottom: 0;
+    .hero {
+      position: relative;
+      overflow: visible;
       width: 100%;
-      &, & a {
+      height: auto;
+      min-height: 100vh;
+
+      .logo {
+        padding: 8vh 0;
+        max-width: 50%;
+      }
+
+      h1 {
+        display: block;
+        font-size: 1.8vw;
+        margin-bottom: 0.25em;
+        @include breakpoint(medium down) {
+          font-size: 4.5vw;
+        }
+      }
+
+      .learn-more {
+        font-size: 0.8em;
+        padding: 0.5em;
+      }
+
+      .start-conversation {
+        padding: 6vh 0px 0;
         color: $dark-text;
-      }
-    }
 
-    .logo {
-      padding: 8vh 0;
-      max-width: 50%;
-    }
+        .input-container {
+          position: relative;
+          margin-bottom: 15px;
+          border: 2px solid $accent-color;
+          border-radius: 20px;
+          background-color: white;
 
-    h1 {
-      display: block;
-      font-size: 1.8vw;
-      margin-bottom: 0.25em;
-      @include breakpoint(medium down) {
-        font-size: 4.5vw;
-      }
-    }
+          .background {
+            height: 2.4375rem; // input height
 
-    .learn-more {
-      font-size: 0.8em;
-      padding: 0.5em;
-    }
+            label {
+              position: absolute;
+              line-height: 2.4375rem; // input height
+              right: 0.5em;
+              font-size: 1.5em;
+              font-weight: bold;
+              color: $accent-color;
+            }
+          }
 
-    .start-conversation {
-      padding: 6vh 0px 0;
-      color: $dark-text;
-
-      .input-container {
-        position: relative;
-        margin-bottom: 15px;
-        border: 2px solid $accent-color;
-        border-radius: 20px;
-        background-color: white;
-
-        .background {
-          height: 2.4375rem; // input height
-
-          label {
+          input {
+            display: block;
+            text-align: left;
             position: absolute;
-            line-height: 2.4375rem; // input height
-            right: 0.5em;
-            font-size: 1.5em;
-            font-weight: bold;
-            color: $accent-color;
+            border: 0;
+            margin: 0;
+            padding: 0 2em 0 1em;
+            outline: 0;
+            background: none;
+            color: $dark-text;
+            appearance: none;
+            box-shadow: none;
+
           }
         }
 
-        input {
-          display: block;
-          text-align: left;
-          position: absolute;
-          border: 0;
-          margin: 0;
-          padding: 0 2em 0 1em;
-          outline: 0;
-          background: none;
-          color: $dark-text;
-          appearance: none;
-          box-shadow: none;
+        .chat-bubble {
+          width: 1em;
+          margin-right: 0.5em;
+        }
 
+        .button.phone-number {
+          font-size: 1.2em;
+          letter-spacing: 0.1em;
         }
       }
-
-      .chat-bubble {
-        width: 1em;
-        margin-right: 0.5em;
-      }
-
-      .button.phone-number {
-        font-size: 1.2em;
-        letter-spacing: 0.1em;
-      }
     }
-  }
-
-  .main-subview {
-    position: relative;
-    overflow: visible;
-    width: 100%;
-    height: auto;
-    min-height: 100vh;
 
     .feature-area {
       padding: 3em 0;
@@ -197,54 +182,6 @@
     }
   }
 
-  .main-search {
-    padding-top: 10%;
-    padding-bottom: 5em;
-    h3 {
-      color: $accent-color;
-      margin-bottom: 40px;
-    }
-
-    .input-container {
-      position: relative;
-      margin-bottom: 40px;
-      border: 0px solid transparent;
-      border-radius: 5px;
-      background-color: white;
-
-      .background {
-        height: 2.4375rem; // input height
-
-        label {
-          position: absolute;
-          line-height: 2.4375rem; // input height
-          left: 0.5em;
-          font-size: 1.5em;
-          font-weight: bold;
-          color: $dark-text;
-
-          .material-icons {
-            vertical-align: middle;
-          }
-        }
-      }
-
-      input {
-        display: block;
-        text-align: left;
-        position: absolute;
-        border: 0;
-        margin: 0;
-        padding: 0 1em 0 2.5em;
-        outline: 0;
-        background: none;
-        color: $dark-text;
-        appearance: none;
-        box-shadow: none;
-
-      }
-    }
-  }
 
   .main-conversation {
     height: 100%;
