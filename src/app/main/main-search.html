@@ -78,7 +78,7 @@
             <div class="conversation"
               ui-sref="^.conversation({conversation_id: convo.id})"
             >
-              <div class="message direction-in">
+              <div class="message direction_in">
                 <p>
                   {{convo.summary_question}}
                 </p>
@@ -86,7 +86,7 @@
                   <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
                 </div>
               </div>
-              <div class="message direction-out summary">
+              <div class="message direction_out summary">
                 <p>
                   {{convo.teaser_answer}}
                 </p>
