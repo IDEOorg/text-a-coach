@@ -1,4 +1,5 @@
 {
   "env": "production",
-  "configApiBase": "https://text-a-coach-backend.herokuapp.com/api/v1"
+  "configApiBase": "https://text-a-coach-backend.herokuapp.com/api/v1",
+  "mixpanelToken": "aec2663af68da6954563b971d1c647f6"
 }
