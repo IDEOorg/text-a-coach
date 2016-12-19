@@ -44,6 +44,9 @@ $motion-ui-states: (
 $global-lineheight: 1.7;
 $paragraph-lineheight: 1.7;
 $button-background: $accent-color;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$anchor-color: $accent-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -15%);
 // $foundation-palette: (
 //   primary: #00006F
 // );
