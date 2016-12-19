@@ -62,35 +62,43 @@
     </div>
     <div ng-if="vm.searchText.length">
       <div class="container results-area">
-        <div class="row align-center">
-          <div class="small-10 columns text-left">
-            <div class="spinner light spin-cw slow infinite fade-in fade-out"
-              ng-if="vm.pending"
-            ></div>
-            <div class="fade-in fade-out"
-              ng-if="!vm.pending"
+        <div class="row align-center fade-in fade-out"
+          ng-if="vm.pending"
+        >
+          <div class="small-10 columns text-center">
+            <div class="spinner light spin-cw slow infinite"></div>
+          </div>
+        </div>
+        <div class="row align-center fade-in fade-out"
+          ng-if="!vm.pending"
+        >
+          <div class="small-10 medium-6 columns text-left"
+            ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+          >
+            <div class="conversation"
+              ui-sref="^.conversation({conversation_id: convo.id})"
             >
-              <div class="conversation"
-                ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
-              >
-                <div class="message direction_in">
-                  <div class="person text-center">
-                    <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
-                  </div>
+              <div class="message direction-in">
+                <p>
                   {{convo.summary_question}}
-                </div>
-                <div class="message direction_out summary">
-                  <div class="person text-center">
-                    <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
-                  </div>
-                  <p>{{convo.teaser_answer}}</p>
-                  <a class="hollow-button dark expanded all-caps"
-                    ui-sref="^.conversation({conversation_id: convo.id})"
-                  >
-                    See Full Conversation
-                  </a>
+                </p>
+                <div class="person">
+                  <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
                 </div>
               </div>
+              <div class="message direction-out summary">
+                <p>
+                  {{convo.teaser_answer}}
+                </p>
+                <div class="person">
+                  <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+                </div>
+              </div>
+              <a class="read-more-button text-center all-caps"
+                ui-sref="^.conversation({conversation_id: convo.id})"
+              >
+                See Full Conversation
+              </a>
             </div>
           </div>
         </div>

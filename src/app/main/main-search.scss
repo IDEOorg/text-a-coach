@@ -61,7 +61,17 @@
   }
 
   .results-area {
+    padding-top: 4em;
+    padding-bottom: 4em;
     background: $soft-background;
+    .conversation {
+      .message.direction-out {
+        display: none;
+      }
+      .read-more-button {
+        display: none;
+      }
+    }
   }
 
   .ask-area {
