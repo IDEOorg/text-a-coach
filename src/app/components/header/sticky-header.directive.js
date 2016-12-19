@@ -5,18 +5,25 @@ export function StickyHeaderDirective($window, $log, _) {
     restrict: 'A',
     templateUrl: 'app/components/header/sticky-header.html',
     scope: {
-      active: '=?'
+      active: '=?',
+      alwaysOn: '=?'
     },
     link: (scope, element, attrs) => {
       let windowEl = angular.element($window);
       let parentEl = angular.element(element).parent();
 
+      scope.atTop = true;
+
       let scrollFn = (el) => {
-        $log.info(el.scrollTop());
-        if (el.scrollTop() > 100) {
+        scope.atTop = (el.scrollTop() < 10);
+        if (scope.alwaysOn) {
           scope.active = true;
         } else {
-          scope.active = false;
+          if (el.scrollTop() > 100) {
+            scope.active = true;
+          } else {
+            scope.active = false;
+          }
         }
         scope.$apply();
       }
@@ -25,6 +32,7 @@ export function StickyHeaderDirective($window, $log, _) {
       let throttled2 = _.throttle(() => { scrollFn(parentEl) }, 250, {leading: true, trailing: true});
       windowEl.on('scroll', throttled1);
       parentEl.on('scroll', throttled2);
+      throttled1();
     }
   };
 

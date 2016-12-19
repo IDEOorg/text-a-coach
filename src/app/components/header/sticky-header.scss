@@ -1,4 +1,5 @@
 .sticky-header {
+  transition: box-shadow 0.3s linear;
   position: fixed;
   width: 100%;
   height: $header-height;
@@ -6,8 +7,16 @@
   padding: 2em 0;
   font-size: 1em;
   background-color: $light-background;
-  box-shadow: 0 1px 4px #ccc;
+  box-shadow: 0 0px 0px #fff;
   z-index: 10;
+
+  &.at-top {
+
+  }
+
+  &.not-at-top {
+    box-shadow: 0 1px 4px #ccc;
+  }
 
   // display: none;
   // @include breakpoint(small down) {
