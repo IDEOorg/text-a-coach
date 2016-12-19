@@ -73,7 +73,7 @@
           ng-if="!vm.pending"
         >
           <div class="small-10 medium-6 columns text-left"
-            ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+            ng-repeat="convo in vm.conversations"
           >
             <div class="conversation"
               ui-sref="^.conversation({conversation_id: convo.id})"
@@ -100,17 +100,6 @@
                 See Full Conversation
               </a>
             </div>
-          </div>
-        </div>
-        <div class="row align-center">
-          <div class="small-10 columns text-center">
-            <!-- TODO: Implement results paging with API -->
-            <a class="hollow-button teal all-caps"
-              ng-show="vm.limitTo !== false && vm.conversations.length > vm.limitTo"
-              ng-click="vm.limitTo = false"
-            >
-              Show More Conversations
-            </a>
           </div>
         </div>
       </div>

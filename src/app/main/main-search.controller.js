@@ -6,7 +6,6 @@ export class MainSearchController {
     this.$log = $log;
     this.Conversation = Conversation;
 
-    this.limitTo = 3;
     this.searchText = $stateParams.q || '';
     this.searchTextCache = '';
     this.searchPromise = null;
