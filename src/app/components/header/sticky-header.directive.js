@@ -12,8 +12,8 @@ export function StickyHeaderDirective($window, $log, _) {
       let windowEl = angular.element($window);
       let parentEl = angular.element(element).parent();
 
+      scope.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
       scope.atTop = true;
-
       let scrollFn = (el) => {
         scope.atTop = (el.scrollTop() < 10);
         if (scope.alwaysOn) {
