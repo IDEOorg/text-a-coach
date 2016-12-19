@@ -32,6 +32,7 @@
 
     /* Any page that is text heavy, such as About or Privacy */
     .page-info {
+      padding-top: $header-height;
       min-height: 100vh;
 
       h1 {
