@@ -1,10 +1,9 @@
 export class MainIndexController {
-  constructor ($scope, $state, $log, $anchorScroll, $timeout, Conversation) {
+  constructor ($scope, $state, $log, $timeout, Conversation) {
     'ngInject';
 
     this.$state = $state;
     this.$log = $log;
-    this.$anchorScroll = $anchorScroll;
     this.$timeout = $timeout;
     this.Conversation = Conversation;
 
