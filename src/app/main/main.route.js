@@ -16,7 +16,7 @@ export function routerConfig ($stateProvider) {
       controllerAs: 'vm'
     })
     .state('main.search', {
-      url: '/search',
+      url: '/search?q',
       templateUrl: 'app/main/main-search.html',
       controller: 'MainSearchController',
       controllerAs: 'vm'

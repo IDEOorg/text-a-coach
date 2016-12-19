@@ -1,5 +1,5 @@
 export class MainSearchController {
-  constructor ($scope, $log, _, Conversation) {
+  constructor ($scope, $stateParams, $log, _, Conversation) {
     'ngInject';
 
     this.$scope = $scope;
@@ -7,6 +7,7 @@ export class MainSearchController {
     this.Conversation = Conversation;
 
     this.limitTo = 3;
+    this.searchText = $stateParams.q || '';
     this.searchTextCache = '';
     this.searchPromise = null;
     this.debounceSearch = _.throttle(this.search, 500, {leading: true, trailing: true});
