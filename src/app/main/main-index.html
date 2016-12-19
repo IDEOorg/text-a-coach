@@ -153,7 +153,7 @@
           ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
         >
           <div class="conversation">
-            <div class="message direction_in">
+            <div class="message direction-in">
               <p>
                 {{convo.summary_question}}
               </p>
@@ -161,7 +161,7 @@
                 <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
               </div>
             </div>
-            <div class="message direction_out summary">
+            <div class="message direction-out summary">
               <p>
                 {{convo.teaser_answer}}
               </p>

@@ -26,13 +26,13 @@
           </div>
         </div>
         <div ng-if="vm.conversation.messages.length === 0">
-          <div class="message direction_in">
+          <div class="message direction-in">
             <div class="person text-center">
               <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
             </div>
             {{vm.conversation.summary_question}}
           </div>
-          <div class="message direction_out">
+          <div class="message direction-out">
             <div class="person text-center">
               <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
             </div>
