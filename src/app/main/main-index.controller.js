@@ -1,11 +1,12 @@
 export class MainIndexController {
-  constructor ($scope, $state, $log, $anchorScroll, $timeout) {
+  constructor ($scope, $state, $log, $anchorScroll, $timeout, $window) {
     'ngInject';
 
     this.$state = $state;
     this.$log = $log;
     this.$anchorScroll = $anchorScroll;
     this.$timeout = $timeout;
+    this.$window = $window;
 
 
     this.activate($scope);
@@ -41,6 +42,7 @@ export class MainIndexController {
 
   startConversation() {
     mixpanel.track("Start Conversation Button Clicked");
+    this.$window.open(this.smsLink, '_self');
   }
 
   makeLink() {
