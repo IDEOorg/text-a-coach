@@ -9,7 +9,7 @@ export class MainIndexController {
     this.Conversation = Conversation;
     this.phoneNumber = phoneNumber;
 
-    this.limitTo = 4;
+    this.limitTo = 3;
 
     this.activate($scope);
   }

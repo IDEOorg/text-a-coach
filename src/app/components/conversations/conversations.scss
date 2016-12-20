@@ -1,35 +1,46 @@
 .conversation {
-  border: 1px solid $light-border;
-  border-radius: 0.5em;
-  margin-bottom: 2em;
+  margin: 0 auto 2em;
+  padding: 0 1.5em;
+  max-width: 400px;
+  
 
   .message {
+    position: relative;
     padding: 1.5em;
+    border-radius: 10px;
+    margin: 0 auto .8em;
 
     p {
       font-size: 1.2em;
       line-height: 1.1;
-      font-weight: 700;
       margin-bottom: 0.25em;
     }
 
     .person {
-      font-size: 0.8em;
+      font-size: 0.9em;
       color: $medium-text;
     }
 
     &.direction_in {
       // margin-bottom: 1em;
-      p {
-        color: $accent-color;
+      background-color: $dark-background;
+      color: white;
+
+
+      :after {
+        position: absolute;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        content: url('../assets/images/Blue-tail.png');
+        bottom: 20px;
+        right: -20px;
       }
     }
 
     &.direction_out {
       color: $dark-text;
       background-color: $soft-background;
-      border-top: 1px solid $light-border;
-      border-bottom: 1px solid $light-border;
 
       p {
         color: $dark-text;
@@ -51,19 +62,23 @@
           // }
         }
       }
+
+      &:after {
+        position: absolute;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        content: url('../assets/images/Gray-tail.png');
+        bottom: 20px;
+        left: -20px;
+      }
     }
 
     .person {
       padding-bottom: 0em;
     }
-  }
 
-  .read-more-button {
-    display: block;
-    padding: 1.25em 0.5em;
-    color: $accent-color;
-    letter-spacing: 0.1em;
-    font-size: 0.8em;
-  }
+
+  } 
 
 }
