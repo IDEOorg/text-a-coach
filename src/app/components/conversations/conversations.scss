@@ -65,12 +65,12 @@
 
       &:after {
         position: absolute;
-        content: " ";
-        width: 20px;
-        height: 20px;
-        content: url('../assets/images/Gray-tail.png');
         bottom: 20px;
         left: -20px;
+        width: 20px;
+        height: 20px;
+        content: " ";
+        content: url('../assets/images/Gray-tail.png');
       }
     }
 
