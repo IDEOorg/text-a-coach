@@ -9,6 +9,25 @@
   }
 
   .conversation {
-    margin: 2em 0 4em;
+    margin: 2em auto 4em;
   }
+
+
+  .call-to-action {
+    padding: 50px 0 70px;
+
+    h4 {
+      margin: 0;
+      font-size: 22px;
+      
+      @include breakpoint(small down) {
+        margin-top:20px;
+      }
+    }
+
+    .button {
+      margin: 20px 0 0 0;
+    }
+  }
+
 }
