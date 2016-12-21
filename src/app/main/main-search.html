@@ -16,47 +16,40 @@
       <div class="row align-center">
         <div class="medium-7 small-12 columns text-center">
           <h3>Browse by topic:</h3>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button dark with-icon"
             ng-click="vm.searchText='End of the month';"
           >
-            <img class="icon" src="assets/images/emoji-icon-1.png" />
-            END OF THE MONTH
+            #EndOfTheMonth
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Debt';"
           >
-            <img class="icon" src="assets/images/emoji-icon-2.png" />
-            DEBT
+            #Debt
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Budget';"
           >
-            <img class="icon" src="assets/images/emoji-icon-3.png" />
-            BUDGET
+            #Budget
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Stress';"
           >
-            <img class="icon" src="assets/images/emoji-icon-4.png" />
-            STRESS
+            #Stress
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Marriage';"
           >
-            <img class="icon" src="assets/images/emoji-icon-5.png" />
-            MARRIAGE
+            #Marriage
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Tax Season';"
           >
-            <img class="icon" src="assets/images/emoji-icon-6.png" />
-            TAX SEASON
+            #TaxSeason
           </a>
-          <a class="hollow-button dark with-icon all-caps"
+          <a class="hashtag-button"
             ng-click="vm.searchText='Small Business';"
           >
-            <img class="icon" src="assets/images/emoji-icon-7.png" />
-            SMALL BUSINESS
+            #SmallBusiness
           </a>
         </div>
       </div>
@@ -104,11 +97,12 @@
           </div>
         </div>
       </div>
-      <div class="container ask-area">
+      <div class="container call-to-action">
         <div class="row align-center">
-          <div class="small-8 columns text-center">
-            <h4>Don't see what you're looking for?</h4>
-            <h4>Text us a money question now:</h4>
+          <div class="small-12 medium-8 columns text-center">
+            <h4>
+              Don't see what you're looking for?<br>Text us a money question now:
+            </h4>
             <div style="padding-top: 0.5em;">
               <a class="button phone-number all-caps">
                 {{ $root.phoneNumberFormatted }}

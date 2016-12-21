@@ -102,13 +102,13 @@ h1, h2, h3, h4 {
   background-image: url('../../assets/images/Dot-pattern-full.png');
   background-blend-mode: multiply;
   background-size: 50px 50px;
-  padding: 20px 0;
+  padding: 50px 0 60px;
 
   h4 {
-    margin: 38px 20px 0 0;
     color: white;
     font-weight: 600;
     display: block;
+    font-size: 22px;
 
     @include breakpoint(small down) {
       margin-top:40px;
@@ -120,7 +120,7 @@ h1, h2, h3, h4 {
   }
 
   .button {
-    margin: 18px 0;
+    margin: 20px 0;
 
     background-color: white;
     color: $accent-color;
@@ -197,6 +197,9 @@ h1, h2, h3, h4 {
   text-decoration: underline;
   font-weight: 700;
   line-height: 45px;
+
+  padding: 0 5px;
+  margin: 0 20px;
 
   @include breakpoint(small down) {
     display: block;

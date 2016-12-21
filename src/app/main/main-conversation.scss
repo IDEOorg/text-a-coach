@@ -14,11 +14,9 @@
 
 
   .call-to-action {
-    padding: 50px 0 70px;
 
     h4 {
       margin: 0;
-      font-size: 22px;
       
       @include breakpoint(small down) {
         margin-top:20px;
