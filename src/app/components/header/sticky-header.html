@@ -3,27 +3,27 @@
   ng-class="{ 'at-top': atTop, 'not-at-top': !atTop }"
 >
   <div class="container">
-    <div class="row align-center">
-      <div class="small-3 columns text-left accent-text">
+    <div class="ask-area">
+      <span class="show-for-medium">
+        Text us at 646-291-6384
+      </span>
+      <a class="hide-for-medium" ng-href="{{smsLink}}">
+        ASK
+      </a>
+    </div>
+    <div class="search-area">
+      <a class="search-button" ui-sref="main.search">
+        <i class="material-icons">search</i>
         <span class="show-for-medium">
-          Text us at 646-291-6384
+          Search
         </span>
-        <a class="hide-for-medium" ng-href="{{smsLink}}">
-          ASK
-        </a>
-      </div>
+      </a>
+    </div>
+    <div class="row align-center">
       <div class="small-6 columns text-center"
         ui-sref="main.index"
       >
         <b>MoneyPeople</b>
-      </div>
-      <div class="small-3 columns text-right accent-text">
-        <a class="search-button" ui-sref="main.search">
-          <i class="material-icons">search</i>
-          <span class="show-for-medium">
-            Search
-          </span>
-        </a>
       </div>
     </div>
   </div>
