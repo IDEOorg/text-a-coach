@@ -8,7 +8,7 @@
         <div class="conversation">
           <div ng-if="vm.conversation.messages.length > 0">
             <div class="message"
-              ng-repeat="message in vm.conversation.messages"
+              ng-repeat="message in vm.conversation.messages | orderBy: '+created_at'"
               ng-class="message.direction"
             >
               <p>
