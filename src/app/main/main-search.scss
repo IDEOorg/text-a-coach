@@ -3,7 +3,7 @@
   min-height: 100vh;
 
   &.search-is-empty {
-    background: $soft-background;
+    background: $blue-background;
   }
 
   .search-header {
@@ -63,7 +63,11 @@
   .results-area {
     padding-top: 4em;
     padding-bottom: 4em;
-    background: $soft-background;
+    background: $blue-background;
+    background-image: url('../assets/images/dot-pattern-fade.png');
+    background-repeat: repeat-x;
+    background-size:  50px 500px;
+
     .conversation {
       .message.direction_out {
         display: none;

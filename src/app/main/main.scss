@@ -12,7 +12,7 @@
   }
 
   .page-header-row {
-    height: 80px;
+    height: $header-height;
     box-shadow: 0 2px 6px 0 #CCCCCC;
     padding: 30px 30px 0;
 
@@ -30,10 +30,6 @@
       line-height: 27px;
     }
 
-    img {
-      width: 170px;
-    }
-
     @include breakpoint(small down) {
       height: 60px;
       padding-top: 20px;
@@ -45,6 +41,12 @@
   }
 
   .main-intro {
+
+      .logo {
+        /*padding: 8vh 0;*/
+        width: 184px;
+      }
+
     .hero {
       position: relative;
       overflow: visible;
@@ -56,11 +58,6 @@
       background-image: url('../assets/images/dot-pattern-fade.png');
       background-repeat: repeat-x;
       background-size:  50px 500px;
-
-      .logo {
-        padding: 8vh 0;
-        max-width: 50%;
-      }
 
       h1 {
         display: block;
@@ -191,7 +188,7 @@
     }
 
     .topics-area {
-      background-color: $soft-background;
+      background-color: $blue-background;
       border-top: 1px solid $light-border;
       border-bottom: 1px solid $light-border;
       padding: 4em 0;

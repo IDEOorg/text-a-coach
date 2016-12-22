@@ -21,13 +21,13 @@
     .person {
       font-size: 0.9em;
       color: $medium-text;
+      padding-bottom: 0em;
     }
 
     &.direction_in {
       // margin-bottom: 1em;
       background-color: $dark-background;
       color: white;
-
 
       :after {
         position: absolute;
@@ -46,6 +46,10 @@
 
       p {
         color: $dark-text;
+      }
+
+      .person {
+        color: #A4a4a4;
       }
 
       &.summary {
@@ -75,11 +79,6 @@
         content: url('../assets/images/gray-tail.png');
       }
     }
-
-    .person {
-      padding-bottom: 0em;
-    }
-
 
   } 
 

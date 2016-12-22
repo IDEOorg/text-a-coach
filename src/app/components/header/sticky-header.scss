@@ -4,11 +4,42 @@
   width: 100%;
   height: $header-height;
   top: 0;
-  padding: 2em 0;
+  /*padding: 2em 0;*/
   font-size: 1em;
   background-color: $light-background;
   box-shadow: 0 0px 0px #fff;
   z-index: 10;
+
+  box-shadow: 0 2px 6px 0 #CCCCCC;
+  padding: 30px 30px 0;
+
+  i.search-button {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 24px;
+    float:right;
+  }
+
+  .search-text {
+    float:right;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  img {
+    width: 184px;
+  }
+
+  @include breakpoint(small down) {
+    height: 60px;
+    padding-top: 20px;
+
+    img {
+      width: 150px;
+    }
+  }
+
 
   &.at-top {
 
@@ -23,10 +54,6 @@
     left: 1em;
     text-align: left;
     color: $accent-color;
-  }
-
-  .logo {
-    width: 170px;
   }
 
   .search-area {
