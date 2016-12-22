@@ -10,6 +10,7 @@ export class MainIndexController {
     this.phoneNumber = phoneNumber;
 
     this.limitTo = 3;
+    this.topics = ["#Debt", "#Retirement", "#Credit"];
 
     this.activate($scope);
   }
