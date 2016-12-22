@@ -163,13 +163,15 @@
     }
 
     .call-to-action {
+      padding: 20px 0;
 
       h4 {
-        margin: 18px 20px 0 0;
+        margin: 34px 20px 0 0;
         font-size: 25px;
 
         @include breakpoint(small down) {
           margin-right: 0;
+          margin-top: 8px;
         }
       }
 
