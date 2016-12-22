@@ -16,41 +16,38 @@
       <div class="row align-center">
         <div class="medium-7 small-12 columns text-center">
           <h3>Browse by topic:</h3>
-          <a class="hashtag-button dark with-icon"
-            ng-click="vm.searchText='End of the month';"
-          >
-            #EndOfTheMonth
+
+          <a ui-sref="main.search({q: 'Rent'})" class="hashtag-button">
+            #Rent
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Debt';"
-          >
+          <a ui-sref="main.search({q: 'Debt'})" class="hashtag-button">
             #Debt
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Budget';"
-          >
-            #Budget
+          <a ui-sref="main.search({q: 'Starting a Family'})" class="hashtag-button">
+            #StartingAFamily
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Stress';"
-          >
-            #Stress
+          <a ui-sref="main.search({q: 'Saving'})" class="hashtag-button">
+            #Saving
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Marriage';"
-          >
-            #Marriage
+          <a ui-sref="main.search({q: 'Retirement'})" class="hashtag-button">
+            #Retirement
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Tax Season';"
-          >
-            #TaxSeason
+          <a ui-sref="main.search({q: 'Credit'})" class="hashtag-button">
+            #Credit
           </a>
-          <a class="hashtag-button"
-            ng-click="vm.searchText='Small Business';"
-          >
-            #SmallBusiness
+          <a ui-sref="main.search({q: 'Taxes'})" class="hashtag-button">
+            #Taxes
           </a>
+          <a ui-sref="main.search({q: 'Banking'})" class="hashtag-button">
+            #Banking
+          </a>
+          <a ui-sref="main.search({q: 'Goals'})" class="hashtag-button">
+            #Goals
+          </a>
+          <a ui-sref="main.search({q: 'Budgetng'})" class="hashtag-button">
+            #Budgeting
+          </a>
+
         </div>
       </div>
     </div>
