@@ -53,7 +53,7 @@
       width: 100%;
       height: auto;
       overflow: hidden;
-      padding-top: 60px;
+      padding-top: 3.5vw;
 
       background-image: url('../assets/images/dot-pattern-fade.png');
       background-repeat: repeat-x;
@@ -74,11 +74,6 @@
         line-height: 48px;
         color: $accent-color;
 
-        @include breakpoint(small down) {
-          font-size: 4.5vw;
-          line-height: 32px;
-        }
-
       }
 
       h4 {
@@ -87,6 +82,20 @@
         font-weight: 500;
         margin-bottom: 30px;
       }
+
+        @include breakpoint(small down) {
+
+          h3 {
+            font-size: 18px;
+            line-height: 24px;            
+          }
+
+          h4 {
+            font-size: 14px;
+            line-height: 20px;            
+          }
+        }
+
 
       .header-area {
         padding: 30px 5% 11vw;
@@ -98,6 +107,11 @@
         img {
           width: 400px;
           margin: 0 auto;
+
+          @include breakpoint(small down) {
+            width: 325px;
+          }
+
         }
       }
 
@@ -149,25 +163,19 @@
     }
 
     .call-to-action {
-      padding: 20px 0;
 
       h4 {
-        margin: 38px 20px 0 0;
+        margin: 18px 20px 0 0;
+        font-size: 25px;
 
         @include breakpoint(small down) {
           margin-right: 0;
-
         }
       }
 
       .button {
         margin: 18px 0;
       }
-
-    }
-
-    .call-to-action h4 {
-      font-size: 25px;
     }
 
     .feature-area {
