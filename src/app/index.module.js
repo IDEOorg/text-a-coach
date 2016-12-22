@@ -33,6 +33,8 @@ let dependencies = [
 angular.module('coachApp', dependencies)
   .constant('_', _)
   .constant('moment', moment)
+  .constant('phoneNumber', '6462916384')
+  .constant('phoneNumberFormatted', '646-291-6384')
   .config(config)
   .config(routerConfig)
   .run(runBlock)

@@ -1,4 +1,4 @@
-export function StickyFooterDirective($window, _) {
+export function StickyFooterDirective($window, _, phoneNumber) {
   'ngInject';
 
   let directive = {
@@ -8,7 +8,7 @@ export function StickyFooterDirective($window, _) {
       active: '=?'
     },
     link: (scope, element, attrs) => {
-      scope.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
+      scope.smsLink = 'sms:1' + phoneNumber + '&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
 
       let scrollTarget = angular.element(attrs.scrollTarget),
           windowEl = angular.element($window);

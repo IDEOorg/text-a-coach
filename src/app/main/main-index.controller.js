@@ -1,5 +1,5 @@
 export class MainIndexController {
-  constructor ($scope, $state, $log, $timeout, Conversation, $window) {
+  constructor ($scope, $state, $log, $timeout, Conversation, $window, phoneNumber) {
     'ngInject';
 
     this.$state = $state;
@@ -7,6 +7,7 @@ export class MainIndexController {
     this.$timeout = $timeout;
     this.$window = $window;
     this.Conversation = Conversation;
+    this.phoneNumber = phoneNumber;
 
     this.limitTo = 4;
 
@@ -29,7 +30,7 @@ export class MainIndexController {
   }
 
   makeLink() {
-    this.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
+    this.smsLink = 'sms:1' + this.phoneNumber + '&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
   }
 
 }
