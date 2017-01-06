@@ -10,6 +10,7 @@ export class MainSearchController {
     this.searchTextCache = '';
     this.searchPromise = null;
     this.debounceSearch = _.throttle(this.search, 500, {leading: true, trailing: true});
+    this.debounceLogAnalytics = _.throttle(this.logSearch, 3000, {leading: false, trailing: true});
 
     this.activate();
   }
@@ -29,6 +30,7 @@ export class MainSearchController {
     if (this.searchTextCache === this.searchText) return true;
     if (this.searchPromise && this.searchPromise.abort) this.searchPromise.abort();
     this.pending = true;
+    this.debounceLogAnalytics(this.searchText);
     this.searchTextCache = this.searchText;
     this.searchPromise = this.Conversation.meta.search(this.searchText, 1);
     this.searchPromise.then( (conversations) => {
@@ -37,6 +39,19 @@ export class MainSearchController {
       return conversations;
     });
     return this.searchPromise;
+  }
+
+  logSearch(searchText) {
+
+      // Send this to Facebook
+      fbq('track', 'Search', {
+        search_string: searchText
+      });
+
+      // Send this to Mixpanel
+      mixpanel.track("Text Search", {
+        "Search String": searchText
+      });
   }
 
 }
