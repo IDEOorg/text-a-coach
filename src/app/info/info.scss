@@ -32,8 +32,11 @@
 
     /* Any page that is text heavy, such as About or Privacy */
     .page-info {
-      padding-top: $header-height;
+      padding-top: $header-height + 90px;
       min-height: 100vh;
+      background-image: url('../assets/images/dot-pattern-fade.png');
+      background-repeat: repeat-x;
+      background-size:  49px 430px;
 
       h1 {
         margin: 0;
@@ -47,6 +50,7 @@
         margin-bottom: 30px;
         line-height: 1.2;
         @include sans-serif;
+        font-weight: bold;
         color: $accent-color;
       }
 

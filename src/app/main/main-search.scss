@@ -4,6 +4,26 @@
 
   &.search-is-empty {
     background: $blue-background;
+    &.footer-context {
+      padding-bottom: 10%;
+    }
+  }
+
+  &.footer-context {
+    padding-bottom: 40%;
+    @include breakpoint(small down) {
+      padding-bottom: 100%;
+    }
+    @include breakpoint(large up) {
+      padding-bottom: 30%;
+    }
+  }
+
+  .call-to-action {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 9%;
+    width: 100%;
   }
 
   .search-header {
@@ -63,10 +83,10 @@
   .results-area {
     padding-top: 4em;
     padding-bottom: 4em;
-    background: $blue-background;
+    background: white;
     background-image: url('../assets/images/dot-pattern-fade.png');
     background-repeat: repeat-x;
-    background-size:  50px 500px;
+    background-size: 49px 430px;
 
     .conversation {
       .message.direction_out {
