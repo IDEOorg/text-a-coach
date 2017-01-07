@@ -9,6 +9,7 @@ import { MessageFactory } from './components/conversations/message.factory';
 import { FooterDirective } from './components/footer/footer.directive';
 import { StickyFooterDirective } from './components/footer/sticky-footer.directive';
 import { StickyHeaderDirective } from './components/header/sticky-header.directive';
+import { AutoFocusDirective } from './components/auto-focus.directive';
 import { ScrollFixDirective } from './components/scroll-fix.directive';
 
 import './main/main.module.js';
@@ -44,4 +45,5 @@ angular.module('coachApp', dependencies)
   .directive('footer', FooterDirective)
   .directive('stickyFooter', StickyFooterDirective)
   .directive('stickyHeader', StickyHeaderDirective)
+  .directive('autoFocus', AutoFocusDirective)
   .directive('scrollFix', ScrollFixDirective);
