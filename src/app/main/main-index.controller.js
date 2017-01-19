@@ -26,6 +26,7 @@ export class MainIndexController {
 
   startConversation() {
     mixpanel.track("Start Conversation Button Clicked");
+    ga('send', 'event', 'Start Conversation', 'Go to SMS');
     this.$window.open(this.smsLink, '_self');
   }
 
