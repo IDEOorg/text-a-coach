@@ -1,5 +1,4 @@
 {
   "env": "development",
-  "configApiBase": "http://localhost:3333/api/v1",
-  "mixpanelToken": "8bffd0d4876057f137a44c6911c61ac9"
+  "configApiBase": "http://localhost:3333/api/v1"
 }
