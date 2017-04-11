@@ -1,67 +1,114 @@
-<div class="main-search container">
-  <div class="row align-center">
-    <div class="small-8 columns text-center">
-      <h3>Money conversations we're having&hellip;</h3>
-    </div>
-  </div>
-  <div class="row align-center">
-    <div class="small-10 columns text-left">
+<div class="main-index" scroll-fix>
+  <div class="main-search footer-context"
+    ng-class="{'search-is-empty': !vm.searchText.length}"
+  >
+    <div class="search-header">
       <div class="input-container">
+        <a class="cancel-btn" ui-sref="main.index">cancel</a>
         <input type="text"
           ng-model="vm.searchText"
-          placeholder="Search conversations"
+          auto-focus
+          placeholder="Start typing to search"
         />
-        <div class="background">
-          <div style="text-align:center;">
-            <label><i class="material-icons">search</i></label>
-            &nbsp;
-            <!-- <span ng-hide="vm.searchText.length > 0">(xxx) xxx-xxxx</span> -->
-          </div>
+      </div>
+    </div>
+    <div class="container topics-area" ng-if="!vm.searchText.length">
+      <div class="row align-center">
+        <div class="medium-7 small-12 columns text-center">
+          <h3>Browse by topic:</h3>
+
+          <a ui-sref="main.search({q: 'Rent'})" class="hashtag-button">
+            #Rent
+          </a>
+          <a ui-sref="main.search({q: 'Debt'})" class="hashtag-button">
+            #Debt
+          </a>
+          <a ui-sref="main.search({q: 'Starting a Family'})" class="hashtag-button">
+            #StartingAFamily
+          </a>
+          <a ui-sref="main.search({q: 'Saving'})" class="hashtag-button">
+            #Saving
+          </a>
+          <a ui-sref="main.search({q: 'Retirement'})" class="hashtag-button">
+            #Retirement
+          </a>
+          <a ui-sref="main.search({q: 'Credit'})" class="hashtag-button">
+            #Credit
+          </a>
+          <a ui-sref="main.search({q: 'Taxes'})" class="hashtag-button">
+            #Taxes
+          </a>
+          <a ui-sref="main.search({q: 'Banking'})" class="hashtag-button">
+            #Banking
+          </a>
+          <a ui-sref="main.search({q: 'Goals'})" class="hashtag-button">
+            #Goals
+          </a>
+          <a ui-sref="main.search({q: 'Budgetng'})" class="hashtag-button">
+            #Budgeting
+          </a>
+
         </div>
       </div>
     </div>
-  </div>
-  <div class="row align-center">
-    <div class="small-10 columns text-left">
-      <div class="spinner light spin-cw slow infinite fade-in fade-out"
-        ng-if="vm.pending"
-      ></div>
-      <div class="fade-in fade-out"
-        ng-if="!vm.pending"
-      >
-        <div class="conversation"
-          ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+    <div ng-if="vm.searchText.length">
+      <div class="container results-area">
+        <div class="row align-center fade-in fade-out"
+          ng-if="vm.pending"
         >
-          <div class="message direction_in">
-            <div class="person text-center">
-              <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
-            </div>
-            {{convo.summary_question}}
+          <div class="small-10 columns text-center">
+            <div class="spinner light spin-cw slow infinite"></div>
           </div>
-          <div class="message direction_out summary">
-            <div class="person text-center">
-              <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
-            </div>
-            <p>{{convo.teaser_answer}}</p>
-            <a class="hollow-button dark expanded all-caps"
+        </div>
+        <div class="row align-center fade-in fade-out"
+          ng-if="!vm.pending"
+        >
+          <div class="small-10 medium-6 columns text-left"
+            ng-repeat="convo in vm.conversations"
+          >
+            <div class="conversation"
               ui-sref="^.conversation({conversation_id: convo.id})"
             >
-              See Full Conversation
-            </a>
+              <div class="message direction_in">
+                <p>
+                  {{convo.summary_question}}
+                </p>
+                <div class="person">
+                  <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+                </div>
+              </div>
+              <div class="message direction_out summary">
+                <p>
+                  {{convo.teaser_answer}}
+                </p>
+                <div class="person">
+                  <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+                </div>
+              </div>
+              <a class="read-more-button text-center all-caps"
+                ui-sref="^.conversation({conversation_id: convo.id})"
+              >
+                See Full Conversation
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container call-to-action">
+        <div class="row align-center">
+          <div class="small-12 medium-8 columns text-center">
+            <h4>
+              Don't see what you're looking for?<br>Text us a money question now:
+            </h4>
+            <div style="padding-top: 0.5em;">
+              <a class="button phone-number all-caps">
+                {{ $root.phoneNumberFormatted }}
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row align-center">
-    <div class="small-10 columns text-center">
-      <!-- TODO: Implement results paging with API -->
-      <a class="hollow-button teal all-caps"
-        ng-show="vm.limitTo !== false"
-        ng-click="vm.limitTo = false"
-      >
-        Show More Conversations
-      </a>
-    </div>
+    <div footer></div>
   </div>
 </div>

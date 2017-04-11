@@ -1,54 +1,71 @@
-<div class="main-conversation container">
-  <div class="row align-center">
-    <div class="small-10 columns text-center">
-      <a class="hollow-button with-icon teal all-caps"
-        ng-click="vm.goBack()"
-      >
-        <i class="material-icons">chevron_left</i> Back To Conversations
-      </a>
-    </div>
-  </div>
-  <div class="row align-center">
-    <div class="small-10 columns text-left">
-      <div class="conversation">
-        <div ng-if="vm.conversation.messages.length > 0">
-          <div class="message"
-            ng-repeat="message in vm.conversation.messages"
-            ng-class="message.direction"
-          >
-            <div class="person text-center" ng-show="message.direction === 'direction_out'">
-              <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+<div class="main-index" scroll-fix>
+  <div sticky-header always-on="true"></div>
+
+  <div class="main-conversation container footer-context">
+    <div class="row align-center conversation-row expanded">
+      <div class="small-10 medium-6 columns text-left">
+        <div class="conversation">
+          <div ng-if="vm.conversation.messages.length > 0">
+            <div class="message"
+              ng-repeat="message in vm.conversation.messages | orderBy: '+created_at'"
+              ng-class="message.direction"
+            >
+              <p>
+                {{message.message}}
+              </p>
+              <div class="person" ng-show="message.direction === 'direction_out'">
+                <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+              </div>
+              <div class="person" ng-show="message.direction === 'direction_in'">
+                <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
+              </div>
             </div>
-            <div class="person text-center" ng-show="message.direction === 'direction_in'">
-              <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
-            </div>
-            {{message.message}}
           </div>
-        </div>
-        <div ng-if="vm.conversation.messages.length === 0">
-          <div class="message direction_in">
-            <div class="person text-center">
-              <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
+          <div ng-if="vm.conversation.messages.length === 0">
+            <div class="message direction_in">
+              <p>
+                {{vm.conversation.summary_question}}
+              </p>
+              <div class="person">
+                <small><span class="all-caps">{{vm.conversation.user.name}}</span> in {{vm.conversation.user.city}}</small>
+              </div>
             </div>
-            {{vm.conversation.summary_question}}
-          </div>
-          <div class="message direction_out">
-            <div class="person text-center">
-              <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+            <div class="message direction_out">
+              <p>
+                {{vm.conversation.summary_answer}}
+              </p>
+              <div class="person">
+                <small><span class="all-caps">{{vm.conversation.agent.name}}</span>, {{vm.conversation.agent.job_title}}</small>
+              </div>
             </div>
-            <p>{{vm.conversation.summary_answer}}</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row align-center">
-    <div class="small-10 columns text-center">
-      <a class="hollow-button with-icon teal all-caps"
-        ng-click="vm.goBack()"
-      >
-        <i class="material-icons">chevron_left</i> Back To Conversations
-      </a>
+
+    <div class="call-to-action expanded">
+      <div class="row align-center text-center">
+          <h4>
+            Not what you're looking for? <br>
+            Text us a money question now:
+          </h4>
+      </div>
+      <div class="row align-center">
+          <div class="show-for-medium chat-bubble" style="padding-top: 0.5em;">
+            <a class="button phone-number all-caps">
+              {{ $root.phoneNumberFormatted }}
+            </a>
+          </div>
+          <div class="hide-for-medium">
+            <div>
+              <a class="button expanded text-center all-caps" ng-href="{{vm.smsLink}}" ng-click="vm.startConversation()">
+                ASK US A MONEY QUESTION
+              </a>
+            </div>
+          </div>
+      </div>
     </div>
+
+    <div footer></div>
   </div>
 </div>

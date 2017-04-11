@@ -1,28 +1,57 @@
 .conversation {
-  padding-bottom: 1em;
-  border-bottom: 3px dotted rgba(255, 255, 255, 0.3);
-  margin-bottom: 2em;
-
-  &:last-child {
-    border-bottom: 0px solid transparent;
-  }
+  margin: 0 auto 2em;
+  padding: 0 1.5em;
+  max-width: 400px;
+  
 
   .message {
-    margin-bottom: 1em;
-    padding: 0.75em 1.5em 1.5em;
+    position: relative;
+    padding: 1.5em;
+    border-radius: 10px;
+    margin: 0 auto .8em;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.1;
+      margin-bottom: 0.25em;
+    }
+
+    .person {
+      font-size: 0.9em;
+      color: $medium-text;
+      padding-bottom: 0em;
+    }
 
     &.direction_in {
-      background-color: $teal-accent; // $light-background;
-      color: $dark-text;
-      border-radius: 3em;
-      margin-left: 10%;
+      // margin-bottom: 1em;
+      background-color: $dark-background;
+      color: white;
+
+      :after {
+        position: absolute;
+        content: " ";
+        width: 20px;
+        height: 20px;
+        content: url('../assets/images/blue-tail.png');
+        bottom: 20px;
+        right: -20px;
+      }
     }
 
     &.direction_out {
-      background-color: $light-background;
       color: $dark-text;
-      border-radius: 0.5em;
-      margin-right: 10%;
+      background-color: $soft-background;
+
+      p {
+        color: $dark-text;
+      }
+
+      .person {
+        color: #A4a4a4;
+      }
+
       &.summary {
         > p {
           position: relative;
@@ -39,10 +68,18 @@
           // }
         }
       }
+
+      &:after {
+        position: absolute;
+        bottom: 20px;
+        left: -20px;
+        width: 20px;
+        height: 20px;
+        content: " ";
+        content: url('../assets/images/gray-tail.png');
+      }
     }
 
-    .person {
-      padding-bottom: 0.5em;
-    }
-  }
+  } 
+
 }

@@ -2,22 +2,22 @@
  *  If you want to override some foundation settings, you have to change values here.
  *  The list of settings values are listed here bower_components/foundation/scss/foundation/_settings.scss
  */
-$dark-background: #102D7D;
-$light-background: #FBFBF1;
-$dark-text: #00006F;
-$teal-accent: #50E3C2;
+$dark-background: #003DFF;
+$soft-background: #EBEBEB;
+$blue-background: #F6F8FF;
+$light-background: #FFF;
+$light-border: #e5e5e5;
+$dark-text: #3c3c3c;
+$medium-text: #809EFF;
+$accent-color: #003DFF;
+$header-height: 80px;
 
 
-@import url('https://fonts.googleapis.com/css?family=Poppins:500|Playfair+Display:900');
-
-@mixin serif {
-  font-family: 'Playfair Display', Georgia, Times, serif;
-  font-weight: 900;
-}
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,700');
 
 @mixin sans-serif {
   font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 
@@ -42,9 +42,12 @@ $motion-ui-states: (
 @import '../../bower_components/motion-ui/src/motion-ui';
 
 // FOUNDAITON VARIABLES
-$global-lineheight: 1.2;
-$paragraph-lineheight: 1.2;
-$button-background: $dark-background;
+$global-lineheight: 1.7;
+$paragraph-lineheight: 1.7;
+$button-background: $accent-color;
+$button-background-hover: scale-color($button-background, $lightness: -15%);
+$anchor-color: $accent-color;
+$anchor-color-hover: scale-color($anchor-color, $lightness: -15%);
 // $foundation-palette: (
 //   primary: #00006F
 // );
@@ -61,7 +64,7 @@ $button-background: $dark-background;
 // bower:scss
 // endbower
 
-.app-container {
+.app-container, .app-container-inner {
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -75,29 +78,85 @@ $button-background: $dark-background;
 
 body {
   background-color: $light-background;
-  color: $dark-background;
+  color: $dark-text;
   height: 100%;
   width: 100%;
   @include sans-serif;
-}
-
-h1, h2, h3 {
-  @include serif;
 }
 
 .all-caps {
   text-transform: uppercase;
 }
 
+h1, h2, h3, h4 {
+  @include sans-serif;
+  font-weight: 700;
+}
+
+.accent-text {
+  color: $accent-color;
+}
+
+.call-to-action {
+  min-height: 140px;
+  background-color: $dark-background;
+  background-image: url('../assets/images/dot-pattern-full.png');
+  background-blend-mode: multiply;
+  background-size: 50px 50px;
+  padding: 40px 10px 60px;
+
+  h4 {
+    color: white;
+    font-weight: 600;
+    display: block;
+    font-size: 22px;
+
+    @include breakpoint(small down) {
+      font-size: 18px;
+      margin-top:40px;
+    }
+  }
+
+  .chat-bubble {
+    display: block;
+  }
+
+  .button {
+    margin: 20px 0;
+
+    background-color: white;
+    color: $accent-color;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 16px 32px;
+    letter-spacing: 0.1em;
+
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, .3);
+  }
+}
+
+.button {
+  border-radius: 2.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+
 .hollow-button {
   display: inline-block;
-  padding: 0.75em 1em;
-  margin: 0 0 1rem 0;
-  font-size: #{map-get($button-sizes, 'default')};
   vertical-align: middle;
+  padding: 6px 15px;
+
+  background-color: #FFFFFF;
+  box-shadow: 0 0 2px 0 #A4A4A4;
+  border-radius: 5px;
+
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: black;
 
   &.with-icon {
-    padding-right: 1.75rem;
+    // padding-right: 1.75rem;
   }
 
   &.expanded {
@@ -106,13 +165,14 @@ h1, h2, h3 {
   }
 
   &.dark {
-    border: 1px solid $dark-background;
+    border: 1px solid $dark-text;
     color: $dark-text;
+    background-color: white;
   }
 
-  &.teal {
-    border: 1px solid $teal-accent;
-    color: $teal-accent;
+  &.green {
+    border: 1px solid $accent-color;
+    color: $accent-color;
   }
 
   &.light {
@@ -124,6 +184,28 @@ h1, h2, h3 {
     vertical-align: middle;
   }
 
+  .icon {
+    vertical-align: top;
+    margin-top: 3px;
+    margin-right: 0.3em;
+    height: 1.2em;
+    width: auto;
+  }
+
+}
+
+.hashtag-button {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 700;
+  line-height: 45px;
+
+  padding: 0 5px;
+  margin: 0 20px;
+
+  @include breakpoint(small down) {
+    display: block;
+  }
 }
 
 .opacity-25 {

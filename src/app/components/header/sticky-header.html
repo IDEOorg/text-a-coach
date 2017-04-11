@@ -1,0 +1,32 @@
+<section class="sticky-header"
+  ng-show="active"
+  ng-class="{ 'at-top': atTop, 'not-at-top': !atTop }"
+>
+  <div class="container">
+    <div class="row align-center expanded">
+        <div class="small-4"
+          ui-sref="main.index"
+        >
+          <img class="logo" src="assets/images/logo.svg">
+        </div>
+
+      <div class="small-4 text-center phone-number-area">
+        <span class="show-for-medium">
+          Text us at {{ $root.phoneNumberFormatted }}
+        </span>
+        <a class="hide-for-medium" ng-href="{{smsLink}}">
+          ASK
+        </a>
+      </div>
+
+      <div class="small-4 text-right">
+        <a class="search-button" ui-sref="main.search">
+          <i class="material-icons">search</i>
+          <div class="search-text show-for-medium">
+            Search
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,52 +1,42 @@
 export class MainIndexController {
-  constructor ($scope, $state, $log, $anchorScroll, $timeout, $window) {
+  constructor ($scope, $state, $log, $timeout, Conversation, $window, phoneNumber) {
     'ngInject';
 
     this.$state = $state;
     this.$log = $log;
-    this.$anchorScroll = $anchorScroll;
     this.$timeout = $timeout;
     this.$window = $window;
+    this.Conversation = Conversation;
+    this.phoneNumber = phoneNumber;
 
+    this.limitTo = 3;
+    this.topics = ["#Debt", "#Retirement", "#Credit"];
 
     this.activate($scope);
   }
 
   activate($scope) {
-    this.scrollToConversations = false;
-
-    $scope.$watch('vm.searchText', () => { this.makeLink(); });
-    $scope.$watch('vm.$state.current.name', (newValue) => { this.stateName = 'state-' + newValue.toString().replace(".", "-"); });
-    $scope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
-      if (toState.name === "main.search" && fromState.name === "main.conversation") {
-        // scroll to main conversations list on mobile
-        // when returning from a conversation details page
-        this.scrollToConversations = true;
-      } else {
-        this.scrollToConversations = false;
-      }
-    });
-    $scope.$on('$viewContentLoaded', (event) => {
-      if (this.scrollToConversations) {
-        this.$timeout( () => {
-          this.$anchorScroll('main-subview');
-        }, 100);
-      } else {
-        this.$timeout( () => {
-          this.$anchorScroll();
-        }, 100);
-      }
-    });
     this.makeLink();
+    this.pending = true;
+    this.Conversation.findAll({flavor_id: 1}).then( (conversations) => {
+      this.conversations = conversations;
+      this.pending = false;
+      return conversations;
+    });
   }
 
   startConversation() {
     mixpanel.track("Start Conversation Button Clicked");
+    ga('send', 'event', 'Start Conversation', 'Go to SMS');
+    fbq('track', 'Lead', {
+      value: 0.00,
+      currency: 'USD'
+    });
     this.$window.open(this.smsLink, '_self');
   }
 
   makeLink() {
-    this.smsLink = 'sms:16462916384&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
+    this.smsLink = 'sms:1' + this.phoneNumber + '&body=' + encodeURIComponent("I'd like to chat about money with one of your coaches. 💰");
   }
 
 }

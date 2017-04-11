@@ -8,6 +8,9 @@ import { ConversationFactory } from './components/conversations/conversation.fac
 import { MessageFactory } from './components/conversations/message.factory';
 import { FooterDirective } from './components/footer/footer.directive';
 import { StickyFooterDirective } from './components/footer/sticky-footer.directive';
+import { StickyHeaderDirective } from './components/header/sticky-header.directive';
+import { AutoFocusDirective } from './components/auto-focus.directive';
+import { ScrollFixDirective } from './components/scroll-fix.directive';
 
 import './main/main.module.js';
 import './info/info.module.js';
@@ -31,6 +34,8 @@ let dependencies = [
 angular.module('coachApp', dependencies)
   .constant('_', _)
   .constant('moment', moment)
+  .constant('phoneNumber', '6463626665')
+  .constant('phoneNumberFormatted', '646-362-6665')
   .config(config)
   .config(routerConfig)
   .run(runBlock)
@@ -38,4 +43,7 @@ angular.module('coachApp', dependencies)
   .factory('Conversation', ConversationFactory)
   .factory('Message', MessageFactory)
   .directive('footer', FooterDirective)
-  .directive('stickyFooter', StickyFooterDirective);
+  .directive('stickyFooter', StickyFooterDirective)
+  .directive('stickyHeader', StickyHeaderDirective)
+  .directive('autoFocus', AutoFocusDirective)
+  .directive('scrollFix', ScrollFixDirective);

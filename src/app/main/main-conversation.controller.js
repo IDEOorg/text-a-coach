@@ -1,18 +1,16 @@
 export class MainConversationController {
-  constructor ($scope, $state, $window, $log, $anchorScroll, conversation) {
+  constructor ($scope, $state, $window, $log, conversation) {
     'ngInject';
 
     this.$log = $log;
     this.$state = $state;
     this.$window = $window;
-    this.$anchorScroll = $anchorScroll;
     this.conversation = conversation;
 
     this.activate();
   }
 
   activate() {
-    this.$anchorScroll();
   }
 
   goBack() {
