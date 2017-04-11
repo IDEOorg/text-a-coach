@@ -26,7 +26,6 @@ export class MainIndexController {
   }
 
   startConversation() {
-    ga('send', 'event', 'Start Conversation', 'Go to SMS');
     this.$window.open(this.smsLink, '_self');
   }
 
