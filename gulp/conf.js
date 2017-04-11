@@ -7,11 +7,6 @@
  */
 
 var gutil = require('gulp-util');
-var yargs = require('yargs').argv;
-
-if(!yargs || !yargs.env) {
-  yargs.env = 'prod';
-}
 
 var paths = {
   src: 'src',

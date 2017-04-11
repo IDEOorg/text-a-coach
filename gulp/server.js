@@ -46,7 +46,11 @@ browserSync.use(browserSyncSpa({
   selector: '[ng-app]'// Only needed for angular apps
 }));
 
-gulp.task('serve', ['watch'], function () {
+gulp.task('set-env-dev', function () {
+  gulp.env.GULP_ENV = gulp.env.GULP_ENV || 'dev';
+});
+
+gulp.task('serve', ['set-env-dev', 'watch'], function () {
   browserSyncInit([path.join(conf.paths.tmp, '/serve'), conf.paths.src]);
 });
 
