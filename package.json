@@ -1,11 +1,19 @@
 {
-  "name": "coachApp",
-  "version": "0.0.0",
+  "name": "text-a-coach",
+  "version": "1.0.0",
   "scripts": {
-    "test": "gulp test",
     "start": "node web",
     "postinstall": "bower install && gulp build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IDEOorg/text-a-coach.git"
+  },
+  "author": "IDEO.ORG",
+  "bugs": {
+    "url": "https://github.com/IDEOorg/text-a-coach/issues"
+  },
+  "homepage": "https://github.com/IDEOorg/text-a-coach",
   "dependencies": {
     "express": "~4.14.0",
     "gzippo": "~0.2.0",
