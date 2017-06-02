@@ -1,6 +1,7 @@
 {
   "name": "text-a-coach",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "start": "node web",
     "postinstall": "bower install && gulp build"
