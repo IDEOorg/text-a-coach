@@ -1,0 +1,34 @@
+.footer-context {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 10%;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 4% 0;
+  font-size: 0.8em;
+  font-weight: 700;
+  background-color: black;
+  color: white;
+
+  a {
+    color: white;
+  }
+}
+
+.dot-background {
+  position: absolute;
+  width:100%;
+  height: 100%;
+  top:0;
+  left:0;
+  opacity: .6;
+  background-image: url('assets/images/dot-pattern-full.png');
+  background-size: 70px 70px;
+}
+
+ul {
+  position: relative; /* To float the links above the dots */
+}

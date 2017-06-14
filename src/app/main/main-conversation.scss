@@ -1,0 +1,37 @@
+.main-conversation {
+  padding-top: $header-height;
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    padding: 3vh 0;
+    max-width: 25%;
+  }
+
+  .conversation-row {
+    background-image: url('../assets/images/dot-pattern-fade.png');
+    background-repeat: repeat-x;
+    background-size:  49px 430px;
+  }
+
+  .conversation {
+    margin: 2em auto 4em;
+  }
+
+
+  .call-to-action {
+
+    h4 {
+      margin: 0;
+      
+      @include breakpoint(small down) {
+        margin-top:20px;
+      }
+    }
+
+    .button {
+      margin: 20px 0 0 0;
+    }
+  }
+
+}

@@ -1,0 +1,152 @@
+<div class="main-index" scroll-fix>
+  <div sticky-header></div>
+
+  <div class="main-intro footer-context">
+      <div class="container">
+        <div class="row page-header-row align-center expanded">
+          <div class="small-4">
+              <img src="assets/images/logo.svg" class="logo">
+          </div>
+          <div class="small-4">
+          </div>
+          <div class="small-4 text-right">
+            <a class="search-button" ui-sref="main.search">
+              <div class="search-text show-for-medium">
+                Search
+              </div>
+              <i class="material-icons">search</i>
+            </a>
+          </div>
+
+
+        </div>
+        <div class="hero row expanded align-center">
+          <div class="header-area medium-7 small-12 columns text-center">
+            <h3>
+              Expert advice to answer your most important financial questions.
+            </h3>
+            <h4>
+              We're a non-profit organization dedicated to helping people achieve their money goals through informed decisions.
+            </h4>
+            <a ui-sref="info.about" class="hollow-button">Learn More</a>
+
+          </div>
+
+          <div class="hero-shot medium-5 small-12 text-center">
+              <img src="assets/images/phone.png">
+          </div>
+        </div>
+
+        <div class="call-to-action row align-center expanded">
+            <h4>
+              Text now with a coach:
+            </h4>
+            <div class="show-for-medium chat-bubble" style="padding-top: 0.5em;">
+              <a class="button phone-number all-caps">
+                {{ $root.phoneNumberFormatted }}
+              </a>
+            </div>
+            <div class="hide-for-medium">
+              <div>
+                <a class="button expanded text-center all-caps" ng-click="vm.startConversation()">
+                  ASK US A MONEY QUESTION
+                </a>
+              </div>
+            </div>
+        </div>
+
+      </div>
+
+
+    <div class="container advice-area">
+      <div class="row align-center">
+        <div class="medium-7 small-12 columns text-center">
+          <h3>
+            Advice We've Shared
+          </h3>
+        </div>
+      </div>
+      <div class="row align-center">
+        <div class="large-4 small-12 columns"
+          ng-repeat="convo in vm.conversations | limitTo: vm.limitTo"
+        >
+          <div class="conversation align-center">
+            <div class="text-center">
+              <a ui-sref="main.search({q: 'Debt'})" class="hashtag-button">
+                {{vm.topics[$index]}}
+              </a>
+            </div>
+            <div class="message direction_in">
+              <p>
+                {{convo.summary_question}}
+              </p>
+              <div class="person">
+                <small><span class="all-caps">{{convo.user.name}}</span> in {{convo.user.city}}</small>
+              </div>
+            </div>
+            <div class="message direction_out summary">
+              <p>
+                {{convo.teaser_answer}}
+              </p>
+
+              <div class="person">
+                <small><span class="all-caps">{{convo.agent.name}}</span>, {{convo.agent.job_title}}</small>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a class="hollow-button text-center all-caps"
+                ui-sref="^.conversation({conversation_id: convo.id})"
+              >
+                Read More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container topics-area">
+      <div class="row align-center">
+        <div class="medium-9 small-12 columns text-center">
+          <h3>Frequently Searched Topics</h3>
+          <a ui-sref="main.search({q: 'Rent'})" class="hashtag-button">
+            #Rent
+          </a>
+          <a ui-sref="main.search({q: 'Debt'})" class="hashtag-button">
+            #Debt
+          </a>
+          <a ui-sref="main.search({q: 'Starting a Family'})" class="hashtag-button">
+            #StartingAFamily
+          </a>
+          <a ui-sref="main.search({q: 'Saving'})" class="hashtag-button">
+            #Saving
+          </a>
+          <a ui-sref="main.search({q: 'Retirement'})" class="hashtag-button">
+            #Retirement
+          </a>
+          <a ui-sref="main.search({q: 'Credit'})" class="hashtag-button">
+            #Credit
+          </a>
+          <a ui-sref="main.search({q: 'Taxes'})" class="hashtag-button">
+            #Taxes
+          </a>
+          <a ui-sref="main.search({q: 'Banking'})" class="hashtag-button">
+            #Banking
+          </a>
+          <a ui-sref="main.search({q: 'Goals'})" class="hashtag-button">
+            #Goals
+          </a>
+          <a ui-sref="main.search({q: 'Budgetng'})" class="hashtag-button">
+            #Budgeting
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div footer></div>
+  </div>
+
+  <!-- <div sticky-footer scroll-target=".main-subview"></div> -->
+
+</div>

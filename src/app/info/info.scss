@@ -1,0 +1,64 @@
+.page-info-index {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100%;
+
+  @include breakpoint(medium down) {
+    height: auto;
+    min-height: 100vh;
+    overflow: visible;
+  }
+
+  .info-subview, .info-subview > .uiview {
+    position: absolute;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    // padding-bottom: 2em;
+
+    @include breakpoint(medium down) {
+      position: relative;
+      overflow: visible;
+      width: 100%;
+      height: auto;
+      min-height: 100vh;
+    }
+  }
+
+  .info-subview {
+
+    /* Any page that is text heavy, such as About or Privacy */
+    .page-info {
+      padding-top: $header-height + 90px;
+      min-height: 100vh;
+      background-image: url('../assets/images/dot-pattern-fade.png');
+      background-repeat: repeat-x;
+      background-size:  49px 430px;
+
+      h1 {
+        margin: 0;
+        padding: 30px 0;
+        text-align: center;
+        @include sans-serif;
+        color: $accent-color;
+      }
+
+      h2 {
+        margin-bottom: 30px;
+        line-height: 1.2;
+        @include sans-serif;
+        font-weight: bold;
+        color: $accent-color;
+      }
+
+      p, ul {
+        @include sans-serif;
+      }
+
+    }
+
+  }
+}

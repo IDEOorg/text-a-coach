@@ -1,0 +1,112 @@
+.sticky-header {
+  transition: box-shadow 0.3s linear;
+  position: fixed;
+  width: 100%;
+  height: $header-height;
+  top: 0;
+  /*padding: 2em 0;*/
+  font-size: 1em;
+  background-color: $light-background;
+  box-shadow: 0 0px 0px #fff;
+  z-index: 10;
+
+  box-shadow: 0 2px 6px 0 #CCCCCC;
+  padding: 30px 30px 0;
+
+  i.search-button {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 24px;
+    float:right;
+  }
+
+  .search-text {
+    float:right;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  img {
+    width: 184px;
+  }
+
+  @include breakpoint(small down) {
+    height: 60px;
+    padding-top: 20px;
+
+    img {
+      width: 150px;
+    }
+  }
+
+
+  &.at-top {
+
+  }
+
+  &.not-at-top {
+    box-shadow: 0 1px 4px #ccc;
+  }
+
+  .ask-area {
+    position: absolute;
+    left: 1em;
+    text-align: left;
+    color: $accent-color;
+  }
+
+  .search-area {
+    position: absolute;
+    right: 1em;
+    text-align: right;
+    color: $accent-color;
+  }
+
+  // display: none;
+  // @include breakpoint(small down) {
+  //   display: block !important;
+  // }
+
+  &.ng-hide-add, &.ng-hide-remove {
+    -webkit-transition:all .5s ease-in-out;
+      -moz-transition:all .5s ease-in-out;
+      -o-transition:all .5s ease-in-out;
+      transition:all .5s ease-in-out;
+  }
+
+  &.ng-hide-add {
+    opacity: 1;
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+  }
+
+  &.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    -webkit-transform:translate3d(0, -100%, 0);
+    -moz-transform:translate3d(0, -100%, 0);
+    transform:translate3d(0, -100%, 0);
+  }
+
+  &.ng-hide-remove {
+    opacity: 0;
+    -webkit-transform:translate3d(0, -100%, 0);
+    -moz-transform:translate3d(0, -100%, 0);
+    transform:translate3d(0, -100%, 0);
+  }
+
+  &.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+    -webkit-transform:translate3d(0, 0, 0);
+    -moz-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+  }
+
+  .search-button {
+    color: $accent-color;
+    .material-icons {
+      vertical-align: middle;
+    }
+  }
+}

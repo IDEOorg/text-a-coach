@@ -1,0 +1,12 @@
+node_modules/
+bower_components/
+coverage/
+.sass-cache/
+.idea/
+.tmp/
+dist/
+docs/app/config-*.json
+docs/maps/
+src/app/components/config.js
+old/
+*.sublime-workspace
