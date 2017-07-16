@@ -27,7 +27,7 @@ To get started, make sure you have the following tools installed and available:
 
 - [Gulp](http://gulpjs.com/)
 - [Bower](https://bower.io/)
-- [Node](https://nodejs.org/) (v5.11)
+- [Node](https://nodejs.org/) (v6.11)
 
 #### Install Dependencies
 
